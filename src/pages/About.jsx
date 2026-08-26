@@ -17,11 +17,11 @@ export default function About() {
             Know About Us!
           </h1>
           <p className="text-white/85 text-[15.5px] leading-relaxed max-w-lg">
-            Discover the story behind Chazown Private Limited, a pioneering force in the EPC
+            Discover the story behind Vardhusa Private Limited, a pioneering force in the EPC
             industry and a trusted leader in MEP solutions across India's residential,
             commercial, and infrastructure sectors. Guided by innovation and quality, we deliver
             tailored design, engineering, and installation services that achieve exceptional
-            results. At Chazown, we are dedicated to building strong relationships and providing
+            results. At Vardhusa, we are dedicated to building strong relationships and providing
             sustainable solutions that set new industry benchmarks.
           </p>
         </motion.div>
@@ -36,7 +36,7 @@ export default function About() {
             History
           </h2>
           <p className="text-ink/50 text-[15.5px] leading-relaxed max-w-lg">
-            Welcome to Chazown Private Limited (pronounced khaw-ZONE), a name derived from the
+            Welcome to Vardhusa Private Limited (pronounced khaw-ZONE), a name derived from the
             Hebrew word meaning a dream, revelation, or vision. Our journey began with a clear
             purpose: transforming the MEP industry with innovative and reliable solutions. Since
             our inception, we have stayed true to this vision, combining expertise, precision,
@@ -81,7 +81,7 @@ export default function About() {
           <Reveal delay={0.2}>
             <p className="text-ink/50 text-[15px] leading-relaxed mt-6">
               We operate across India, delivering high-quality services for several high-profile
-              projects. Chazown Pvt Ltd is dedicated to providing comprehensive Mechanical,
+              projects. Vardhusa Pvt Ltd is dedicated to providing comprehensive Mechanical,
               Plumbing, and Firefighting services to residential, commercial, and infrastructure
               sectors.
             </p>

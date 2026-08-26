@@ -1,50 +1,75 @@
 import { motion } from "framer-motion";
-import { Wind, Zap, Droplets, FlameKindling, Wrench, Gauge, ArrowRight } from "lucide-react";
+import {
+  Wrench,
+  FlameKindling,
+  Droplets,
+  Wind,
+  Zap,
+  MonitorCog,
+  Compass,
+  HardHat,
+  ArrowRight,
+} from "lucide-react";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
+import Testimonials from "../components/Testimonials";
 
 const SERVICES = [
   {
-    icon: Wind,
-    bg: "bg-blue-50",
-    fg: "text-blue-600",
-    title: "Mechanical (HVAC)",
-    desc: "End-to-end design and installation of heating, ventilation, and air-conditioning systems engineered for comfort and efficiency.",
-  },
-  {
-    icon: Zap,
-    bg: "bg-amber-50",
-    fg: "text-amber-500",
-    title: "Electrical",
-    desc: "Power distribution, lighting, and low-voltage systems built to code with a focus on reliability and future scalability.",
-  },
-  {
-    icon: Droplets,
-    bg: "bg-cyan-50",
-    fg: "text-cyan-600",
-    title: "Plumbing",
-    desc: "Water supply, drainage, and sanitary systems executed with precision across residential and commercial developments.",
+    icon: Wrench,
+    bg: "bg-orange-50",
+    fg: "text-orange-500",
+    title: "Turnkey Solution",
+    desc: "Single point of accountability from design through handover, so every trade stays coordinated on one schedule.",
   },
   {
     icon: FlameKindling,
     bg: "bg-rose-50",
     fg: "text-rose-500",
-    title: "Firefighting",
-    desc: "Fire detection, suppression, and life-safety systems designed to protect people and property at every stage of a build.",
+    title: "Fire Detection And Protection System",
+    desc: "Fire detection, suppression, and life-safety systems designed to protect people and property at every stage.",
   },
   {
-    icon: Wrench,
-    bg: "bg-violet-50",
-    fg: "text-violet-500",
-    title: "Value Engineering",
-    desc: "We review every design decision for cost, constructability, and performance before a single pipe is laid.",
+    icon: Droplets,
+    bg: "bg-cyan-50",
+    fg: "text-cyan-600",
+    title: "Plumbing And Sanitation System",
+    desc: "Water supply, drainage, and sanitary systems executed with precision across residential and commercial builds.",
   },
   {
-    icon: Gauge,
+    icon: Wind,
+    bg: "bg-blue-50",
+    fg: "text-blue-600",
+    title: "HVAC System",
+    desc: "Heating, ventilation, and air-conditioning systems engineered for comfort, efficiency, and long service life.",
+  },
+  {
+    icon: Zap,
+    bg: "bg-amber-50",
+    fg: "text-amber-500",
+    title: "Electrical System",
+    desc: "Power distribution, lighting, and low-voltage systems built to code with an eye on future scalability.",
+  },
+  {
+    icon: MonitorCog,
+    bg: "bg-indigo-50",
+    fg: "text-indigo-500",
+    title: "BMS",
+    desc: "Building Management Systems that monitor and control mechanical and electrical equipment from a single dashboard.",
+  },
+  {
+    icon: Compass,
+    bg: "bg-sky-50",
+    fg: "text-sky-600",
+    title: "Design And Engineering",
+    desc: "In-house design and engineering teams conversant with the latest industry practices and standards.",
+  },
+  {
+    icon: HardHat,
     bg: "bg-emerald-50",
     fg: "text-emerald-500",
-    title: "Facility Commissioning",
-    desc: "Rigorous testing and handover processes that make sure every system performs exactly as designed, from day one.",
+    title: "Facility Management",
+    desc: "Ongoing maintenance and operations support that keeps every system performing long after handover.",
   },
 ];
 
@@ -55,7 +80,7 @@ export default function Businesses() {
         eyebrow="Our Businesses"
         title="Comprehensive MEP Services,"
         highlight="Under One Roof"
-        subtitle="From first sketch to final commissioning, we design, engineer, and install the systems that keep buildings running — mechanical, electrical, plumbing, and fire safety."
+        subtitle="From first sketch to final commissioning, we design, engineer, and install the systems that keep buildings running."
         img="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80"
       />
 
@@ -67,20 +92,22 @@ export default function Businesses() {
               What We <span className="text-brand-600">Deliver</span>
             </h2>
             <p className="text-ink/50 text-[15px] max-w-xl mb-14">
-              Six disciplines, one accountable team — so nothing falls through the cracks between
-              trades.
+              Eight disciplines, one accountable team — so nothing falls through the cracks
+              between trades.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {SERVICES.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.06}>
+              <Reveal key={s.title} delay={i * 0.05}>
                 <div className="bg-mist rounded-3xl p-7 h-full flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <span className={`${s.bg} ${s.fg} rounded-2xl p-3.5 w-fit mb-8`}>
                     <s.icon size={22} strokeWidth={2} />
                   </span>
-                  <h3 className="font-display font-bold text-[19px] text-ink mb-2">{s.title}</h3>
-                  <p className="text-ink/50 text-[14px] leading-relaxed">{s.desc}</p>
+                  <h3 className="font-display font-bold text-[17px] text-ink mb-2 leading-snug">
+                    {s.title}
+                  </h3>
+                  <p className="text-ink/50 text-[13.5px] leading-relaxed">{s.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -97,7 +124,7 @@ export default function Businesses() {
             </h2>
             <p className="text-ink/50 text-[15px] leading-relaxed max-w-lg mb-4">
               Most projects juggle separate contractors for mechanical, electrical, plumbing, and
-              fire systems — and the coordination gaps between them cost time and money. Chazown
+              fire systems — and the coordination gaps between them cost time and money. Vardhusa
               runs all four under one project team, one schedule, and one point of accountability.
             </p>
             <p className="text-ink/50 text-[15px] leading-relaxed max-w-lg mb-8">
@@ -127,6 +154,8 @@ export default function Businesses() {
           </motion.div>
         </div>
       </section>
+
+      <Testimonials />
     </>
   );
 }

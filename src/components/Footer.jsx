@@ -61,12 +61,12 @@ export default function Footer() {
                 />
               </svg>
               <div className="leading-tight">
-                <p className="font-display font-extrabold text-[20px] tracking-tight text-ink">CHAZOWN</p>
+                <p className="font-display font-extrabold text-[20px] tracking-tight text-ink">Vardhusa</p>
                 <p className="text-[9px] tracking-[0.25em] text-ink/50 -mt-0.5">AN EPC COMPANY</p>
               </div>
             </div>
             <p className="text-ink/50 text-[14.5px] leading-relaxed">
-              Chazown Pvt Ltd is dedicated to providing comprehensive Mechanical, Plumbing, and
+              Vardhusa Pvt Ltd is dedicated to providing comprehensive Mechanical, Plumbing, and
               Firefighting services to residential, commercial, and infrastructure sectors.
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function Footer() {
         </div>
 
         <p className="text-center text-ink/40 text-[13.5px] mt-16">
-          Copyright © 2024 CHAZOWN - An EPC Company
+          Copyright © 2024 Vardhusa - An EPC Company
         </p>
       </div>
     </footer>

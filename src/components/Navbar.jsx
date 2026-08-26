@@ -45,7 +45,7 @@ export default function Navbar() {
             />
           </svg>
           <div className="leading-tight">
-            <p className="font-display font-extrabold text-[19px] tracking-tight text-ink">CHAZOWN</p>
+            <p className="font-display font-extrabold text-[19px] tracking-tight text-ink">Vardhusa</p>
             <p className="text-[9px] tracking-[0.25em] text-ink/50 -mt-0.5">AN EPC COMPANY</p>
           </div>
         </Link>

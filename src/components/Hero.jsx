@@ -30,7 +30,7 @@ export default function Hero() {
             quality, safety and sustainability, ultimately enhancing the built environment
           </p>
           <button className="mt-8 flex items-center gap-2 bg-white/95 hover:bg-white text-ink font-semibold rounded-full pl-6 pr-2 py-2 text-[15px] transition-colors">
-            Why Chazown
+            Why Vardhusa
             <span className="bg-mist rounded-full p-2">
               <ArrowRight size={16} />
             </span>
