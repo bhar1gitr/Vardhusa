@@ -1,73 +1,55 @@
 import { motion } from "framer-motion";
-import {
-  Wrench,
-  FlameKindling,
-  Droplets,
-  Wind,
-  Zap,
-  MonitorCog,
-  Compass,
-  HardHat,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 import Testimonials from "../components/Testimonials";
+import TurnjeyLogo from "../assets/business/Turn Key.jpg";
+import FireLogo from "../assets/business/Fire Fighting.jpg";
+import PlumbingLogo from "../assets/business/Plumbing.jpg";
+import HvacLogo from "../assets/business/HVAC.jpg";
+import ElectricalLogo from "../assets/business/Electrical.jpg";
+import BmsLogo from "../assets/business/Bms.jpg";
+import DesignLogo from "../assets/business/Design.jpg";
+import FacilityLogo from "../assets/business/Facility.jpg";
 
 const SERVICES = [
   {
-    icon: Wrench,
-    bg: "bg-orange-50",
-    fg: "text-orange-500",
+    img: TurnjeyLogo,
     title: "Turnkey Solution",
     desc: "Single point of accountability from design through handover, so every trade stays coordinated on one schedule.",
   },
   {
-    icon: FlameKindling,
-    bg: "bg-rose-50",
-    fg: "text-rose-500",
+    img: FireLogo, 
     title: "Fire Detection And Protection System",
     desc: "Fire detection, suppression, and life-safety systems designed to protect people and property at every stage.",
   },
   {
-    icon: Droplets,
-    bg: "bg-cyan-50",
-    fg: "text-cyan-600",
+    img: PlumbingLogo,
     title: "Plumbing And Sanitation System",
     desc: "Water supply, drainage, and sanitary systems executed with precision across residential and commercial builds.",
   },
   {
-    icon: Wind,
-    bg: "bg-blue-50",
-    fg: "text-blue-600",
+    img: HvacLogo,
     title: "HVAC System",
     desc: "Heating, ventilation, and air-conditioning systems engineered for comfort, efficiency, and long service life.",
   },
   {
-    icon: Zap,
-    bg: "bg-amber-50",
-    fg: "text-amber-500",
+    img: ElectricalLogo,
     title: "Electrical System",
     desc: "Power distribution, lighting, and low-voltage systems built to code with an eye on future scalability.",
   },
   {
-    icon: MonitorCog,
-    bg: "bg-indigo-50",
-    fg: "text-indigo-500",
+    img: BmsLogo,
     title: "BMS",
     desc: "Building Management Systems that monitor and control mechanical and electrical equipment from a single dashboard.",
   },
   {
-    icon: Compass,
-    bg: "bg-sky-50",
-    fg: "text-sky-600",
+    img: DesignLogo,
     title: "Design And Engineering",
     desc: "In-house design and engineering teams conversant with the latest industry practices and standards.",
   },
   {
-    icon: HardHat,
-    bg: "bg-emerald-50",
-    fg: "text-emerald-500",
+    img: FacilityLogo,
     title: "Facility Management",
     desc: "Ongoing maintenance and operations support that keeps every system performing long after handover.",
   },
@@ -97,17 +79,28 @@ export default function Businesses() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.05}>
-                <div className="bg-[#F8F9FA] rounded-3xl p-7 h-full flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                  <span className={`${s.bg} ${s.fg} rounded-2xl p-3.5 w-fit mb-8 shadow-sm`}>
-                    <s.icon size={22} strokeWidth={2} />
-                  </span>
-                  <h3 className="font-sans font-bold text-[17px] text-[#0B0E1A] mb-2 leading-snug">
-                    {s.title}
-                  </h3>
-                  <p className="text-gray-500 text-[13.5px] leading-relaxed">{s.desc}</p>
+                <div className="group bg-[#F8F9FA] rounded-3xl h-full flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+                  {/* Image Header */}
+                  <div className="h-48 overflow-hidden relative">
+                    <img 
+                      src={s.img} 
+                      alt={s.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    />
+                    {/* Optional overlay gradient to make it look premium */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-7 flex flex-col flex-1 bg-white">
+                    <h3 className="font-sans font-bold text-[18px] text-[#0B0E1A] mb-2 leading-snug group-hover:text-[#00AEEF] transition-colors">
+                      {s.title}
+                    </h3>
+                    <p className="text-gray-500 text-[14px] leading-relaxed">{s.desc}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
