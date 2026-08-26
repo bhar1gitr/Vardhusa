@@ -60,13 +60,13 @@ export default function CSR() {
       />
 
       {/* Stats */}
-      <section className="container-wrap py-16">
+      <section className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>
-              <div className="bg-mist rounded-2xl px-6 py-7 text-center">
-                <p className="font-display font-extrabold text-3xl md:text-4xl text-ink">{s.value}</p>
-                <p className="text-ink/55 text-[13.5px] mt-1.5 font-medium">{s.label}</p>
+              <div className="bg-[#F8F9FA] rounded-2xl px-6 py-7 text-center shadow-sm border border-gray-100">
+                <p className="font-sans font-extrabold text-3xl md:text-4xl text-[#0B0E1A]">{s.value}</p>
+                <p className="text-gray-500 text-[13.5px] mt-1.5 font-medium">{s.label}</p>
               </div>
             </Reveal>
           ))}
@@ -75,12 +75,12 @@ export default function CSR() {
 
       {/* Initiatives */}
       <section className="py-12 md:py-20">
-        <div className="container-wrap">
+        <div className="container mx-auto px-4 lg:px-8">
           <Reveal>
-            <h2 className="font-display font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-ink max-w-xl mb-4">
-              Where We <span className="text-brand-600">Focus</span>
+            <h2 className="font-sans font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-[#0B0E1A] max-w-xl mb-4">
+              Where We <span className="text-[#00AEEF]">Focus</span>
             </h2>
-            <p className="text-ink/50 text-[15px] max-w-xl mb-14">
+            <p className="text-gray-500 text-[15px] max-w-xl mb-14">
               Four areas where we believe an engineering company can make the most lasting
               difference.
             </p>
@@ -89,12 +89,12 @@ export default function CSR() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {INITIATIVES.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06}>
-                <div className="bg-mist rounded-3xl p-7 h-full flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                  <span className={`${v.bg} ${v.fg} rounded-2xl p-3.5 w-fit mb-8`}>
+                <div className="bg-[#F8F9FA] rounded-3xl p-7 h-full flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+                  <span className={`${v.bg} ${v.fg} rounded-2xl p-3.5 w-fit mb-8 shadow-sm`}>
                     <v.icon size={22} strokeWidth={2} />
                   </span>
-                  <h3 className="font-display font-bold text-[18px] text-ink mb-2">{v.title}</h3>
-                  <p className="text-ink/50 text-[14px] leading-relaxed">{v.desc}</p>
+                  <h3 className="font-sans font-bold text-[18px] text-[#0B0E1A] mb-2">{v.title}</h3>
+                  <p className="text-gray-500 text-[14px] leading-relaxed">{v.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -103,11 +103,11 @@ export default function CSR() {
       </section>
 
       {/* Gallery */}
-      <section className="bg-mist py-20 md:py-28">
-        <div className="container-wrap">
+      <section className="bg-[#F8F9FA] py-20 md:py-28">
+        <div className="container mx-auto px-4 lg:px-8">
           <Reveal>
-            <h2 className="font-display font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-ink mb-14">
-              Moments From the <span className="text-brand-600">Field</span>
+            <h2 className="font-sans font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-[#0B0E1A] mb-14">
+              Moments From the <span className="text-[#00AEEF]">Field</span>
             </h2>
           </Reveal>
 
@@ -119,9 +119,9 @@ export default function CSR() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-3xl overflow-hidden aspect-[3/4]"
+                className="rounded-3xl overflow-hidden aspect-[3/4] shadow-sm"
               >
-                <img src={img} alt="" className="w-full h-full object-cover" />
+                <img src={img} alt="CSR Gallery" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
               </motion.div>
             ))}
           </div>

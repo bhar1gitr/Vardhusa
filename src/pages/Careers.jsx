@@ -56,22 +56,22 @@ export default function Careers() {
 
       {/* Values */}
       <section className="py-20 md:py-28">
-        <div className="container-wrap">
+        <div className="container mx-auto px-4 lg:px-8">
           <Reveal>
-            <h2 className="font-display font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-ink max-w-xl mb-14">
-              Why People <span className="text-brand-600">Stay</span>
+            <h2 className="font-sans font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-[#0B0E1A] max-w-xl mb-14">
+              Why People <span className="text-[#00AEEF]">Stay</span>
             </h2>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {VALUES.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06}>
-                <div className="bg-mist rounded-3xl p-7 h-full flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                  <span className={`${v.bg} ${v.fg} rounded-2xl p-3.5 w-fit mb-8`}>
+                <div className="bg-[#F8F9FA] rounded-3xl p-7 h-full flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+                  <span className={`${v.bg} ${v.fg} rounded-2xl p-3.5 w-fit mb-8 shadow-sm`}>
                     <v.icon size={22} strokeWidth={2} />
                   </span>
-                  <h3 className="font-display font-bold text-[18px] text-ink mb-2">{v.title}</h3>
-                  <p className="text-ink/50 text-[14px] leading-relaxed">{v.desc}</p>
+                  <h3 className="font-sans font-bold text-[18px] text-[#0B0E1A] mb-2">{v.title}</h3>
+                  <p className="text-gray-500 text-[14px] leading-relaxed">{v.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -80,25 +80,25 @@ export default function Careers() {
       </section>
 
       {/* Open roles */}
-      <section className="bg-mist py-20 md:py-28">
-        <div className="container-wrap">
+      <section className="bg-[#F8F9FA] py-20 md:py-28">
+        <div className="container mx-auto px-4 lg:px-8">
           <Reveal>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
-              <h2 className="font-display font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-ink">
-                Open <span className="text-brand-600">Positions</span>
+              <h2 className="font-sans font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-[#0B0E1A]">
+                Open <span className="text-[#00AEEF]">Positions</span>
               </h2>
-              <p className="text-ink/50 text-[15px]">{ROLES.length} roles open right now</p>
+              <p className="text-gray-500 text-[15px] font-medium">{ROLES.length} roles open right now</p>
             </div>
           </Reveal>
 
           <div className="flex flex-col gap-3">
             {ROLES.map((r, i) => (
               <Reveal key={r.title} delay={i * 0.05}>
-                <div className="bg-white rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:shadow-md transition-shadow">
+                <div className="bg-white rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:shadow-md transition-shadow border border-gray-100">
                   <div>
-                    <span className="text-brand-600 text-[13px] font-semibold">{r.dept}</span>
-                    <h3 className="font-display font-bold text-[18px] text-ink mt-1">{r.title}</h3>
-                    <div className="flex items-center gap-4 mt-2 text-ink/45 text-[13.5px]">
+                    <span className="text-[#00AEEF] text-[13px] font-bold tracking-wide uppercase">{r.dept}</span>
+                    <h3 className="font-sans font-bold text-[18px] text-[#0B0E1A] mt-1">{r.title}</h3>
+                    <div className="flex items-center gap-4 mt-2 text-gray-500 text-[13.5px] font-medium">
                       <span className="flex items-center gap-1.5">
                         <MapPin size={14} /> {r.location}
                       </span>
@@ -107,9 +107,9 @@ export default function Careers() {
                       </span>
                     </div>
                   </div>
-                  <button className="flex items-center justify-center gap-2 bg-navy-800 hover:bg-navy-700 text-white rounded-full pl-6 pr-2 py-2.5 text-[14px] font-semibold transition-colors shrink-0 w-fit">
+                  <button className="flex items-center justify-center gap-2 bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-full pl-6 pr-2 py-2.5 text-[14px] font-semibold transition-colors shrink-0 w-fit">
                     Apply Now
-                    <span className="bg-white/15 rounded-full p-2">
+                    <span className="bg-white/20 rounded-full p-2">
                       <ArrowRight size={15} />
                     </span>
                   </button>
@@ -122,25 +122,25 @@ export default function Careers() {
 
       {/* CTA strip */}
       <section className="py-20 md:py-24">
-        <div className="container-wrap">
+        <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="bg-navy-950 rounded-[28px] px-8 sm:px-14 py-14 flex flex-col lg:flex-row lg:items-center justify-between gap-6 text-center lg:text-left"
+            className="bg-[#0B0E1A] rounded-[28px] px-8 sm:px-14 py-14 flex flex-col lg:flex-row lg:items-center justify-between gap-6 text-center lg:text-left shadow-lg"
           >
             <div>
-              <h2 className="font-display font-extrabold text-white text-[26px] sm:text-[32px] leading-[1.15]">
+              <h2 className="font-sans font-extrabold text-white text-[26px] sm:text-[32px] leading-[1.15]">
                 Don't see the right role?
               </h2>
-              <p className="text-white/60 text-[15px] mt-2 max-w-md">
+              <p className="text-gray-400 text-[15px] mt-2 max-w-md">
                 Send us your resume anyway — we're always looking for good engineers.
               </p>
             </div>
-            <button className="mx-auto lg:mx-0 flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white rounded-full pl-6 pr-2 py-2.5 text-[14.5px] font-semibold transition-colors shrink-0">
+            <button className="mx-auto lg:mx-0 flex items-center gap-2 bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-full pl-6 pr-2 py-2.5 text-[14.5px] font-semibold transition-colors shrink-0">
               Send Your Resume
-              <span className="bg-white/15 rounded-full p-2">
+              <span className="bg-white/20 rounded-full p-2">
                 <ArrowRight size={16} />
               </span>
             </button>

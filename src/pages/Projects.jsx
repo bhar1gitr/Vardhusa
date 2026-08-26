@@ -73,13 +73,13 @@ export default function Projects() {
       />
 
       {/* Stats */}
-      <section className="container-wrap py-16">
+      <section className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>
-              <div className="bg-mist rounded-2xl px-6 py-7 text-center">
-                <p className="font-display font-extrabold text-3xl md:text-4xl text-ink">{s.value}</p>
-                <p className="text-ink/55 text-[13.5px] mt-1.5 font-medium">{s.label}</p>
+              <div className="bg-[#F8F9FA] rounded-2xl px-6 py-7 text-center shadow-sm border border-gray-100">
+                <p className="font-sans font-extrabold text-3xl md:text-4xl text-[#0B0E1A]">{s.value}</p>
+                <p className="text-gray-500 text-[13.5px] mt-1.5 font-medium">{s.label}</p>
               </div>
             </Reveal>
           ))}
@@ -87,16 +87,16 @@ export default function Projects() {
       </section>
 
       {/* Filter + grid */}
-      <section className="container-wrap pb-24 md:pb-32">
+      <section className="container mx-auto px-4 lg:px-8 pb-24 md:pb-32">
         <Reveal className="flex flex-wrap gap-2 mb-10">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-5 py-2.5 rounded-full text-[14px] font-semibold transition-colors ${
+              className={`px-6 py-2.5 rounded-full text-[14px] font-semibold transition-colors ${
                 active === cat
-                  ? "bg-navy-800 text-white"
-                  : "bg-mist text-ink/60 hover:text-ink"
+                  ? "bg-[#00AEEF] text-white shadow-md"
+                  : "bg-[#F8F9FA] text-gray-500 hover:text-[#0B0E1A] border border-gray-100"
               }`}
             >
               {cat}
@@ -114,7 +114,7 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="group rounded-3xl overflow-hidden bg-mist"
+                className="group rounded-3xl overflow-hidden bg-[#F8F9FA] shadow-sm border border-gray-100"
               >
                 <div className="relative h-56 overflow-hidden">
                   <img
@@ -122,16 +122,16 @@ export default function Projects() {
                     alt={p.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute top-4 left-4 bg-white/95 text-ink text-[12.5px] font-semibold rounded-full px-3.5 py-1.5">
+                  <span className="absolute top-4 left-4 bg-white/95 text-[#0B0E1A] text-[12.5px] font-semibold rounded-full px-4 py-1.5 shadow-sm">
                     {p.category}
                   </span>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-display font-bold text-[18px] text-ink mb-1.5">{p.name}</h3>
-                  <p className="flex items-center gap-1.5 text-ink/45 text-[13.5px] mb-3">
+                  <h3 className="font-sans font-bold text-[18px] text-[#0B0E1A] mb-1.5">{p.name}</h3>
+                  <p className="flex items-center gap-1.5 text-gray-500 text-[13.5px] mb-4">
                     <MapPin size={14} /> {p.location}
                   </p>
-                  <p className="text-brand-600 text-[13.5px] font-semibold">{p.scope}</p>
+                  <p className="text-[#00AEEF] text-[13.5px] font-bold">{p.scope}</p>
                 </div>
               </motion.div>
             ))}

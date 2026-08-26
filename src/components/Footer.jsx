@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const FOOTER_COLS = [
   {
@@ -16,71 +17,68 @@ export default function Footer() {
   const [email, setEmail] = useState("");
 
   return (
-    <footer className="bg-mist pt-20 md:pt-28 pb-10">
-      <div className="container-wrap">
-        {/* CTA */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-14 border-b border-ink/10">
-          <div>
-            <h2 className="font-display font-extrabold text-[32px] md:text-[44px] leading-[1.1] text-ink">
-              Ready To Work <span className="text-brand-600">With Us ?</span>
+    <footer className="bg-[#F8F9FA] pt-20 pb-8">
+      <div className="container mx-auto px-6 lg:px-12">
+        
+        {/* CTA Section */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-12 border-b border-gray-200">
+          <div className="max-w-xl">
+            <h2 className="font-sans font-extrabold text-[36px] md:text-[46px] leading-[1.2] text-[#0B0E1A]">
+              Ready To Work <span className="text-[#00AEEF]">With Us ?</span>
             </h2>
-            <p className="text-ink/50 mt-3 text-[15px]">
+            <p className="text-gray-500 mt-2 text-[15px] md:text-[16px]">
               Experience top-notch customer service and let us guide you on your journey
             </p>
           </div>
 
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="flex items-center bg-navy-950 rounded-full p-2 pl-6 w-full lg:w-[420px] shrink-0"
+            className="flex items-center bg-[#0B0E1A] rounded-full p-2 pl-6 w-full lg:w-[480px] shrink-0"
           >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Write your email here"
-              className="bg-transparent flex-1 outline-none text-white placeholder:text-white/40 text-[14.5px]"
+              className="bg-transparent flex-1 outline-none text-white placeholder-gray-400 text-[15px] pr-4"
             />
             <button
               type="submit"
-              className="flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white rounded-full px-6 py-3 text-[14.5px] font-semibold transition-colors shrink-0"
+              className="flex items-center gap-2 bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-full px-7 py-3.5 text-[15px] font-semibold transition-colors shrink-0"
             >
               Submit
-              <Send size={15} />
+              <Send size={16} />
             </button>
           </form>
         </div>
 
-        {/* Bottom */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 pt-14">
-          <div className="max-w-sm">
-            <div className="flex items-center gap-2.5 mb-5">
-              <svg width="34" height="34" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M27 3C21 5 15 9 12 14c3-1 6-1 9 1-4 0-7 1.5-9.5 4.5C9 22 7 25.5 6 27c-1-4 .5-8 3-11-3 .5-6 2-8 4 1-5 4.5-9 9-11.5C14 5.5 20 3 27 3Z"
-                  fill="#0B0E1A"
-                />
-              </svg>
-              <div className="leading-tight">
-                <p className="font-display font-extrabold text-[20px] tracking-tight text-ink">Vardhusa</p>
-                <p className="text-[9px] tracking-[0.25em] text-ink/50 -mt-0.5">AN EPC COMPANY</p>
-              </div>
-            </div>
-            <p className="text-ink/50 text-[14.5px] leading-relaxed">
+        {/* Bottom Section */}
+        <div className="flex flex-col lg:flex-row justify-between gap-12 pt-16 pb-20">
+          
+          {/* Logo & Description */}
+          <div>
+            <img 
+              src={logo} 
+              alt="Vardhusa Logo" 
+              className="h-[36px] w-auto object-contain mb-6" 
+            />
+            <p className="text-gray-500 text-[15px] leading-[1.8] max-w-[400px]">
               Vardhusa Pvt Ltd is dedicated to providing comprehensive Mechanical, Plumbing, and
               Firefighting services to residential, commercial, and infrastructure sectors.
             </p>
           </div>
 
-          <div className="flex gap-16 md:gap-24">
+          {/* Links Columns */}
+          <div className="flex gap-20 md:gap-32 lg:pr-8">
             {FOOTER_COLS.map((col) => (
               <div key={col.title}>
-                <h4 className="font-display font-bold text-[16px] text-ink mb-4">{col.title}</h4>
-                <ul className="space-y-3">
+                <h4 className="font-sans font-bold text-[17px] text-[#0B0E1A] mb-6">{col.title}</h4>
+                <ul className="flex flex-col gap-4">
                   {col.links.map((link) => (
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-ink/55 hover:text-brand-600 text-[14.5px] transition-colors"
+                        className="text-gray-500 hover:text-[#00AEEF] text-[15px] font-medium transition-colors"
                       >
                         {link}
                       </a>
@@ -92,7 +90,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="text-center text-ink/40 text-[13.5px] mt-16">
+        {/* Copyright */}
+        <p className="text-center text-gray-400 text-[14px] font-medium pt-8">
           Copyright © 2024 Vardhusa - An EPC Company
         </p>
       </div>

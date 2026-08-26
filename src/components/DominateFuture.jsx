@@ -1,21 +1,21 @@
-import { Heart, ArrowUpRight } from "lucide-react";
+import { Heart } from "lucide-react";
 
 export default function DominateFuture() {
   return (
-    <section className="container-wrap py-20 md:py-28">
+    <section className="container mx-auto px-4 lg:px-8 py-20 md:py-28">
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
         <div>
-          <h2 className="font-display font-extrabold text-[32px] md:text-[44px] leading-[1.1] text-ink">
+          <h2 className="font-sans font-extrabold text-[32px] md:text-[44px] leading-[1.1] text-gray-900">
             Built to Lead, Engineered to
             <br />
-            Dominate <span className="text-brand-600">the Future</span>
+            Dominate <span className="text-[#00AEEF]">the Future</span>
           </h2>
-          <p className="text-ink/55 max-w-xl mt-4 text-[15px] leading-relaxed">
+          <p className="text-gray-600 max-w-xl mt-4 text-[15px] leading-relaxed">
             With a growing footprint, we operate across India, delivering high-quality services
             for several high-profile projects.
           </p>
         </div>
-        <button className="shrink-0 self-start lg:self-auto bg-navy-800 hover:bg-navy-700 text-white rounded-full px-6 py-3 text-[14.5px] font-semibold transition-colors">
+        <button className="shrink-0 self-start lg:self-auto bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-full px-7 py-3.5 text-[14.5px] font-semibold transition-colors">
           Our Journey
         </button>
       </div>
@@ -51,12 +51,12 @@ function GalleryCard({ img, tag, tall, className = "" }) {
         alt=""
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-      <button className="absolute top-4 right-4 bg-white/90 hover:bg-white rounded-full p-2.5 transition-colors">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+      <button className="absolute top-4 right-4 bg-white/90 hover:bg-white text-[#00AEEF] rounded-full p-2.5 transition-colors">
         <Heart size={16} strokeWidth={2} />
       </button>
       {tag && (
-        <span className="absolute bottom-4 left-4 bg-white/95 text-ink text-[13px] font-semibold rounded-full px-4 py-1.5">
+        <span className="absolute bottom-4 left-4 bg-white/95 text-gray-900 text-[13px] font-semibold rounded-full px-4 py-1.5 shadow-sm">
           {tag}
         </span>
       )}

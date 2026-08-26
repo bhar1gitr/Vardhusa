@@ -86,12 +86,12 @@ export default function Businesses() {
 
       {/* Services grid */}
       <section className="py-20 md:py-28">
-        <div className="container-wrap">
+        <div className="container mx-auto px-4 lg:px-8">
           <Reveal>
-            <h2 className="font-display font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-ink max-w-xl mb-4">
-              What We <span className="text-brand-600">Deliver</span>
+            <h2 className="font-sans font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-[#0B0E1A] max-w-xl mb-4">
+              What We <span className="text-[#00AEEF]">Deliver</span>
             </h2>
-            <p className="text-ink/50 text-[15px] max-w-xl mb-14">
+            <p className="text-gray-500 text-[15px] max-w-xl mb-14">
               Eight disciplines, one accountable team — so nothing falls through the cracks
               between trades.
             </p>
@@ -100,14 +100,14 @@ export default function Businesses() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {SERVICES.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.05}>
-                <div className="bg-mist rounded-3xl p-7 h-full flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                  <span className={`${s.bg} ${s.fg} rounded-2xl p-3.5 w-fit mb-8`}>
+                <div className="bg-[#F8F9FA] rounded-3xl p-7 h-full flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                  <span className={`${s.bg} ${s.fg} rounded-2xl p-3.5 w-fit mb-8 shadow-sm`}>
                     <s.icon size={22} strokeWidth={2} />
                   </span>
-                  <h3 className="font-display font-bold text-[17px] text-ink mb-2 leading-snug">
+                  <h3 className="font-sans font-bold text-[17px] text-[#0B0E1A] mb-2 leading-snug">
                     {s.title}
                   </h3>
-                  <p className="text-ink/50 text-[13.5px] leading-relaxed">{s.desc}</p>
+                  <p className="text-gray-500 text-[13.5px] leading-relaxed">{s.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -116,24 +116,24 @@ export default function Businesses() {
       </section>
 
       {/* Approach split */}
-      <section className="bg-mist py-20 md:py-28">
-        <div className="container-wrap grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <section className="bg-[#F8F9FA] py-20 md:py-28">
+        <div className="container mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <Reveal>
-            <h2 className="font-display font-extrabold text-[30px] sm:text-[40px] leading-[1.1] text-ink mb-5">
-              One Team, <span className="text-brand-600">Every Trade</span>
+            <h2 className="font-sans font-extrabold text-[30px] sm:text-[40px] leading-[1.1] text-[#0B0E1A] mb-5">
+              One Team, <span className="text-[#00AEEF]">Every Trade</span>
             </h2>
-            <p className="text-ink/50 text-[15px] leading-relaxed max-w-lg mb-4">
+            <p className="text-gray-500 text-[15px] leading-relaxed max-w-lg mb-4">
               Most projects juggle separate contractors for mechanical, electrical, plumbing, and
               fire systems — and the coordination gaps between them cost time and money. Vardhusa
               runs all four under one project team, one schedule, and one point of accountability.
             </p>
-            <p className="text-ink/50 text-[15px] leading-relaxed max-w-lg mb-8">
+            <p className="text-gray-500 text-[15px] leading-relaxed max-w-lg mb-8">
               That means fewer clashes on site, faster approvals, and a single number to call when
               something needs to change.
             </p>
-            <button className="flex items-center gap-2 bg-navy-800 hover:bg-navy-700 text-white rounded-full pl-6 pr-2 py-2.5 text-[14.5px] font-semibold transition-colors">
+            <button className="flex items-center gap-2 bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-full pl-6 pr-2 py-2.5 text-[14.5px] font-semibold transition-colors">
               Talk to Our Team
-              <span className="bg-white/15 rounded-full p-2">
+              <span className="bg-white/20 rounded-full p-2">
                 <ArrowRight size={16} />
               </span>
             </button>
@@ -144,7 +144,7 @@ export default function Businesses() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-3xl overflow-hidden min-h-[340px] sm:min-h-[420px]"
+            className="rounded-3xl overflow-hidden min-h-[340px] sm:min-h-[420px] shadow-sm"
           >
             <img
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { PlayCircle, Menu, X } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const LINKS = [
   { label: "Home", to: "/" },
@@ -31,33 +32,31 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white/95 backdrop-blur transition-shadow ${
+      className={`sticky top-0 z-50 bg-white transition-shadow ${
         scrolled ? "shadow-[0_1px_0_0_rgba(11,14,26,0.08)]" : ""
       }`}
     >
-      <div className="container-wrap flex items-center justify-between py-4">
+      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between py-5">
+        
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M27 3C21 5 15 9 12 14c3-1 6-1 9 1-4 0-7 1.5-9.5 4.5C9 22 7 25.5 6 27c-1-4 .5-8 3-11-3 .5-6 2-8 4 1-5 4.5-9 9-11.5C14 5.5 20 3 27 3Z"
-              fill="#0B0E1A"
-            />
-          </svg>
-          <div className="leading-tight">
-            <p className="font-display font-extrabold text-[19px] tracking-tight text-ink">Vardhusa</p>
-            <p className="text-[9px] tracking-[0.25em] text-ink/50 -mt-0.5">AN EPC COMPANY</p>
-          </div>
+          <img 
+            src={logo} 
+            alt="Vardhusa Logo" 
+            className="h-[28px] md:h-[32px] w-auto object-contain" 
+          />
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1 bg-mist rounded-full p-1">
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-1 bg-[#F5F6F8] rounded-full p-1.5">
           {LINKS.map((link) => (
             <Link
               key={link.label}
               to={link.to}
-              className={`px-5 py-2.5 rounded-full text-[14.5px] font-medium transition-colors ${
-                isActive(link.to) ? "pill-nav-active" : "text-ink/70 hover:text-ink"
+              className={`px-6 py-2.5 rounded-full text-[14.5px] font-semibold transition-colors ${
+                isActive(link.to) 
+                  ? "bg-[#00AEEF] text-white shadow-sm" /* Updated to Light Blue */
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               {link.label}
@@ -66,40 +65,43 @@ export default function Navbar() {
         </nav>
 
         {/* Actions */}
-        <div className="hidden md:flex items-center gap-3">
-          <button className="flex items-center gap-2 border border-ink/15 rounded-full px-5 py-2.5 text-[14.5px] font-medium text-ink hover:border-ink/40 transition-colors">
-            <PlayCircle size={17} strokeWidth={1.8} />
+        <div className="hidden md:flex items-center gap-4">
+          <button className="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-[14.5px] font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <PlayCircle size={18} strokeWidth={2} className="text-gray-600" />
             Gallery
           </button>
-          <button className="bg-navy-800 text-white rounded-full px-6 py-2.5 text-[14.5px] font-semibold hover:bg-navy-700 transition-colors">
+          <button className="bg-[#00AEEF] text-white rounded-full px-7 py-2.5 text-[14.5px] font-semibold hover:bg-[#0098d1] transition-colors">
+            {/* Updated to Light Blue */}
             Contact
           </button>
         </div>
 
-        <button className="lg:hidden text-ink" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        {/* Mobile Toggle */}
+        <button className="lg:hidden text-gray-800" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {open && (
-        <div className="lg:hidden border-t border-ink/10 px-6 pb-6 pt-2 flex flex-col gap-1 bg-white">
+        <div className="lg:hidden border-t border-gray-100 px-6 pb-6 pt-2 flex flex-col gap-2 bg-white shadow-lg absolute w-full left-0">
           {LINKS.map((link) => (
             <Link
               key={link.label}
               to={link.to}
               onClick={() => setOpen(false)}
-              className={`text-left px-4 py-3 rounded-xl text-[15px] font-medium ${
-                isActive(link.to) ? "pill-nav-active" : "text-ink/70"
+              className={`text-left px-4 py-3 rounded-xl text-[15px] font-semibold ${
+                isActive(link.to) ? "bg-[#00AEEF] text-white" : "text-gray-600"
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <div className="flex gap-3 mt-3">
-            <button className="flex-1 flex items-center justify-center gap-2 border border-ink/15 rounded-full px-5 py-2.5 text-[14.5px] font-medium">
-              <PlayCircle size={17} /> Gallery
+          <div className="flex flex-col gap-3 mt-4">
+            <button className="w-full flex items-center justify-center gap-2 border border-gray-200 rounded-full px-5 py-3 text-[14.5px] font-semibold">
+              <PlayCircle size={18} /> Gallery
             </button>
-            <button className="flex-1 bg-navy-800 text-white rounded-full px-6 py-2.5 text-[14.5px] font-semibold">
+            <button className="w-full bg-[#00AEEF] text-white rounded-full px-6 py-3 text-[14.5px] font-semibold">
               Contact
             </button>
           </div>
