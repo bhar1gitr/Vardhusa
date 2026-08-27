@@ -4,7 +4,17 @@ import { MapPin } from "lucide-react";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 
-const CATEGORIES = ["All", "Residential", "Commercial", "Infrastructure"];
+const CATEGORIES = [
+  "All",
+  "Residential",
+  "Commercial",
+  "Institutional",
+  "Industrial",
+  "Infrastructure",
+  "Healthcare",
+  "Hospitality",
+  "Data Centres"
+];
 
 const PROJECTS = [
   {
@@ -77,7 +87,7 @@ export default function Projects() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>
-              <div className="bg-[#F8F9FA] rounded-2xl px-6 py-7 text-center shadow-sm border border-gray-100">
+              <div className="bg-[#F8F9FA] rounded-none px-6 py-7 text-center shadow-sm border border-gray-100">
                 <p className="font-sans font-extrabold text-3xl md:text-4xl text-[#0B0E1A]">{s.value}</p>
                 <p className="text-gray-500 text-[13.5px] mt-1.5 font-medium">{s.label}</p>
               </div>
@@ -93,7 +103,7 @@ export default function Projects() {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-6 py-2.5 rounded-full text-[14px] font-semibold transition-colors ${
+              className={`px-6 py-2.5 rounded-none text-[14px] font-semibold transition-colors ${
                 active === cat
                   ? "bg-[#00AEEF] text-white shadow-md"
                   : "bg-[#F8F9FA] text-gray-500 hover:text-[#0B0E1A] border border-gray-100"
@@ -114,7 +124,7 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="group rounded-3xl overflow-hidden bg-[#F8F9FA] shadow-sm border border-gray-100"
+                className="group rounded-none overflow-hidden bg-[#F8F9FA] shadow-sm border border-gray-100"
               >
                 <div className="relative h-56 overflow-hidden">
                   <img
@@ -122,7 +132,7 @@ export default function Projects() {
                     alt={p.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute top-4 left-4 bg-white/95 text-[#0B0E1A] text-[12.5px] font-semibold rounded-full px-4 py-1.5 shadow-sm">
+                  <span className="absolute top-4 left-4 bg-white/95 text-[#0B0E1A] text-[12.5px] font-semibold rounded-none px-4 py-1.5 shadow-sm">
                     {p.category}
                   </span>
                 </div>

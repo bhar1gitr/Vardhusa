@@ -64,7 +64,7 @@ export default function CSR() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>
-              <div className="bg-[#F8F9FA] rounded-2xl px-6 py-7 text-center shadow-sm border border-gray-100">
+              <div className="bg-[#F8F9FA] rounded-none px-6 py-7 text-center shadow-sm border border-gray-100">
                 <p className="font-sans font-extrabold text-3xl md:text-4xl text-[#0B0E1A]">{s.value}</p>
                 <p className="text-gray-500 text-[13.5px] mt-1.5 font-medium">{s.label}</p>
               </div>
@@ -89,8 +89,8 @@ export default function CSR() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {INITIATIVES.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06}>
-                <div className="bg-[#F8F9FA] rounded-3xl p-7 h-full flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-gray-100">
-                  <span className={`${v.bg} ${v.fg} rounded-2xl p-3.5 w-fit mb-8 shadow-sm`}>
+                <div className="bg-[#F8F9FA] rounded-none p-7 h-full flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+                  <span className={`${v.bg} ${v.fg} rounded-none p-3.5 w-fit mb-8 shadow-sm`}>
                     <v.icon size={22} strokeWidth={2} />
                   </span>
                   <h3 className="font-sans font-bold text-[18px] text-[#0B0E1A] mb-2">{v.title}</h3>
@@ -119,7 +119,7 @@ export default function CSR() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-3xl overflow-hidden aspect-[3/4] shadow-sm"
+                className="rounded-none overflow-hidden aspect-[3/4] shadow-sm"
               >
                 <img src={img} alt="CSR Gallery" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
               </motion.div>

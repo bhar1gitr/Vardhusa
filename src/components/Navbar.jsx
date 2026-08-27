@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 bg-white transition-shadow ${
-        scrolled ? "shadow-[0_1px_0_0_rgba(11,14,26,0.08)]" : ""
+        scrolled ? "shadow-[0_1px_0_0_rgba(11,14,26,0.08)]" : "border-b border-gray-100"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between py-5">
@@ -47,31 +47,37 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1 bg-[#F5F6F8] rounded-full p-1.5">
-          {LINKS.map((link) => (
-            <Link
-              key={link.label}
-              to={link.to}
-              className={`px-6 py-2.5 rounded-full text-[14.5px] font-semibold transition-colors ${
-                isActive(link.to) 
-                  ? "bg-[#00AEEF] text-white shadow-sm" /* Updated to Light Blue */
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Desktop Nav - Clean technical layout with creative indicator */}
+        <nav className="hidden lg:flex items-center gap-2">
+          {LINKS.map((link) => {
+            const active = isActive(link.to);
+            return (
+              <Link
+                key={link.label}
+                to={link.to}
+                className={`relative px-5 py-2 rounded-none text-[14.5px] font-semibold transition-colors ${
+                  active 
+                    ? "text-[#00AEEF]" 
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                {link.label}
+                {/* Sharp bottom accent indicator line for active state */}
+                {active && (
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#00AEEF] rounded-none" />
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <button className="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-[14.5px] font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+          <button className="flex items-center gap-2 border border-gray-300 rounded-none px-5 py-2.5 text-[14.5px] font-semibold text-gray-800 hover:border-gray-900 transition-colors">
             <PlayCircle size={18} strokeWidth={2} className="text-gray-600" />
             Gallery
           </button>
-          <button className="bg-[#00AEEF] text-white rounded-full px-7 py-2.5 text-[14.5px] font-semibold hover:bg-[#0098d1] transition-colors">
-            {/* Updated to Light Blue */}
+          <button className="bg-[#00AEEF] text-white rounded-none px-7 py-2.5 text-[14.5px] font-semibold hover:bg-[#0098d1] transition-colors">
             Contact
           </button>
         </div>
@@ -85,23 +91,28 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {open && (
         <div className="lg:hidden border-t border-gray-100 px-6 pb-6 pt-2 flex flex-col gap-2 bg-white shadow-lg absolute w-full left-0">
-          {LINKS.map((link) => (
-            <Link
-              key={link.label}
-              to={link.to}
-              onClick={() => setOpen(false)}
-              className={`text-left px-4 py-3 rounded-xl text-[15px] font-semibold ${
-                isActive(link.to) ? "bg-[#00AEEF] text-white" : "text-gray-600"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {LINKS.map((link) => {
+            const active = isActive(link.to);
+            return (
+              <Link
+                key={link.label}
+                to={link.to}
+                onClick={() => setOpen(false)}
+                className={`text-left px-4 py-3 rounded-none text-[15px] font-semibold border-l-2 ${
+                  active 
+                    ? "border-[#00AEEF] bg-gray-50 text-[#00AEEF]" 
+                    : "border-transparent text-gray-600"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <div className="flex flex-col gap-3 mt-4">
-            <button className="w-full flex items-center justify-center gap-2 border border-gray-200 rounded-full px-5 py-3 text-[14.5px] font-semibold">
+            <button className="w-full flex items-center justify-center gap-2 border border-gray-300 rounded-none px-5 py-3 text-[14.5px] font-semibold">
               <PlayCircle size={18} /> Gallery
             </button>
-            <button className="w-full bg-[#00AEEF] text-white rounded-full px-6 py-3 text-[14.5px] font-semibold">
+            <button className="w-full bg-[#00AEEF] text-white rounded-none px-6 py-3 text-[14.5px] font-semibold">
               Contact
             </button>
           </div>

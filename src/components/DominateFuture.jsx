@@ -15,7 +15,7 @@ export default function DominateFuture() {
             for several high-profile projects.
           </p>
         </div>
-        <button className="shrink-0 self-start lg:self-auto bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-full px-7 py-3.5 text-[14.5px] font-semibold transition-colors">
+        <button className="shrink-0 self-start lg:self-auto bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-none px-7 py-3.5 text-[14.5px] font-semibold transition-colors">
           Our Journey
         </button>
       </div>
@@ -42,7 +42,7 @@ export default function DominateFuture() {
 function GalleryCard({ img, tag, tall, className = "" }) {
   return (
     <div
-      className={`relative rounded-3xl overflow-hidden group ${
+      className={`relative rounded-none overflow-hidden group ${
         tall ? "min-h-[420px] lg:min-h-full" : "min-h-[260px]"
       } ${className}`}
     >
@@ -52,11 +52,11 @@ function GalleryCard({ img, tag, tall, className = "" }) {
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-      <button className="absolute top-4 right-4 bg-white/90 hover:bg-white text-[#00AEEF] rounded-full p-2.5 transition-colors">
+      <button className="absolute top-4 right-4 bg-white/90 hover:bg-white text-[#00AEEF] rounded-none p-2.5 transition-colors">
         <Heart size={16} strokeWidth={2} />
       </button>
       {tag && (
-        <span className="absolute bottom-4 left-4 bg-white/95 text-gray-900 text-[13px] font-semibold rounded-full px-4 py-1.5 shadow-sm">
+        <span className="absolute bottom-4 left-4 bg-white/95 text-gray-900 text-[13px] font-semibold rounded-none px-4 py-1.5 shadow-sm">
           {tag}
         </span>
       )}

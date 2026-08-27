@@ -46,14 +46,14 @@ export default function Achievements() {
         <div className="relative">
           <button
             onClick={() => scroll(-1)}
-            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-11 h-11 rounded-full bg-white border border-gray-100 shadow-md hover:bg-gray-50 text-[#00AEEF] transition-colors"
+            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-11 h-11 rounded-none bg-white border border-gray-100 shadow-md hover:bg-gray-50 text-[#00AEEF] transition-colors"
             aria-label="Previous"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={() => scroll(1)}
-            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-11 h-11 rounded-full bg-white border border-gray-100 shadow-md hover:bg-gray-50 text-[#00AEEF] transition-colors"
+            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-11 h-11 rounded-none bg-white border border-gray-100 shadow-md hover:bg-gray-50 text-[#00AEEF] transition-colors"
             aria-label="Next"
           >
             <ChevronRight size={20} />
@@ -67,13 +67,13 @@ export default function Achievements() {
             {ACHIEVEMENTS_ITEMS.map((item) => (
               <div
                 key={item.title}
-                className="snap-start shrink-0 w-[320px] md:w-[360px] bg-[#F5F6F8] rounded-3xl p-7 flex flex-col"
+                className="snap-start shrink-0 w-[320px] md:w-[360px] bg-[#F5F6F8] rounded-none p-7 flex flex-col"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <span className="bg-white text-[#00AEEF] rounded-xl p-3 shadow-sm">
+                  <span className="bg-white text-[#00AEEF] rounded-none p-3 shadow-sm">
                     <item.icon size={20} strokeWidth={2} />
                   </span>
-                  <span className="bg-white text-gray-500 text-[12.5px] font-semibold rounded-full px-3.5 py-1.5 shadow-sm">
+                  <span className="bg-white text-gray-500 text-[12.5px] font-semibold rounded-none px-3.5 py-1.5 shadow-sm">
                     {item.date}
                   </span>
                 </div>

@@ -32,10 +32,10 @@ export default function Solutions() {
               We create innovative, tailored solutions that break the mold.
             </p>
             <div className="flex gap-3">
-              <button className="bg-white border border-gray-200 rounded-full px-7 py-3.5 text-[14.5px] font-semibold text-gray-900 hover:bg-gray-50 transition-colors whitespace-nowrap">
+              <button className="bg-white border border-gray-200 rounded-none px-7 py-3.5 text-[14.5px] font-semibold text-gray-900 hover:bg-gray-50 transition-colors whitespace-nowrap">
                 Explore our journey
               </button>
-              <button className="bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-full px-7 py-3.5 text-[14.5px] font-semibold transition-colors whitespace-nowrap">
+              <button className="bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-none px-7 py-3.5 text-[14.5px] font-semibold transition-colors whitespace-nowrap">
                 View All Works
               </button>
             </div>
@@ -46,9 +46,9 @@ export default function Solutions() {
           {SOLUTIONS_CARDS.map((c) => (
             <div
               key={c.title}
-              className="bg-white rounded-3xl p-7 flex flex-col min-h-[240px] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group/card"
+              className="bg-white rounded-none p-7 flex flex-col min-h-[240px] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group/card"
             >
-              <span className={`${c.bg} ${c.fg} rounded-2xl p-3.5 w-fit mb-8`}>
+              <span className={`${c.bg} ${c.fg} rounded-none p-3.5 w-fit mb-8`}>
                 <c.icon size={22} strokeWidth={2} />
               </span>
               <h3 className="font-sans font-bold text-[19px] text-gray-900 mb-2">{c.title}</h3>

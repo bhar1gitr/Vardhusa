@@ -82,7 +82,7 @@ export default function Businesses() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.05}>
-                <div className="group bg-[#F8F9FA] rounded-3xl h-full flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+                <div className="group bg-[#F8F9FA] rounded-none h-full flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100">
                   {/* Image Header */}
                   <div className="h-48 overflow-hidden relative">
                     <img 
@@ -124,9 +124,9 @@ export default function Businesses() {
               That means fewer clashes on site, faster approvals, and a single number to call when
               something needs to change.
             </p>
-            <button className="flex items-center gap-2 bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-full pl-6 pr-2 py-2.5 text-[14.5px] font-semibold transition-colors">
+            <button className="flex items-center gap-2 bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-none pl-6 pr-2 py-2.5 text-[14.5px] font-semibold transition-colors">
               Talk to Our Team
-              <span className="bg-white/20 rounded-full p-2">
+              <span className="bg-white/20 rounded-none p-2">
                 <ArrowRight size={16} />
               </span>
             </button>
@@ -137,7 +137,7 @@ export default function Businesses() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-3xl overflow-hidden min-h-[340px] sm:min-h-[420px] shadow-sm"
+            className="rounded-none overflow-hidden min-h-[340px] sm:min-h-[420px] shadow-sm"
           >
             <img
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"

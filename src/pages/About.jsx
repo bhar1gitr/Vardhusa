@@ -83,7 +83,7 @@ export default function About() {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-[#00AEEF] text-white px-6 sm:px-10 lg:px-14 py-16 lg:py-24 flex flex-col justify-center"
+          className="bg-[#00AEEF] text-white px-6 sm:px-10 lg:px-14 py-16 lg:py-24 flex flex-col justify-center rounded-none"
         >
           <h1 className="font-sans font-extrabold text-[38px] sm:text-[48px] leading-[1.05] mb-6">
             Overview
@@ -100,7 +100,7 @@ export default function About() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="px-6 sm:px-10 lg:px-14 py-16 lg:py-24 flex flex-col justify-center bg-white"
+          className="px-6 sm:px-10 lg:px-14 py-16 lg:py-24 flex flex-col justify-center bg-white rounded-none"
         >
           <h2 className="font-sans font-extrabold text-[38px] sm:text-[48px] leading-[1.05] text-[#0B0E1A] mb-6">
             Our Culture
@@ -116,7 +116,7 @@ export default function About() {
       </section>
 
       {/* Passion banner */}
-      <Reveal y={0} className="relative overflow-hidden min-h-[380px] sm:min-h-[420px] flex items-center justify-center rounded-t-[28px] -mt-1">
+      <Reveal y={0} className="relative overflow-hidden min-h-[380px] sm:min-h-[420px] flex items-center justify-center rounded-none -mt-1">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -150,8 +150,8 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
             {SECTORS.map((sector, i) => (
               <Reveal key={sector.name} delay={i * 0.05}>
-                <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100 flex flex-col items-center justify-center h-full hover:-translate-y-1 transition-transform">
-                  <span className="bg-[#E6F7FD] text-[#00AEEF] p-4 rounded-full mb-4">
+                <div className="bg-white rounded-none p-6 text-center shadow-sm border border-gray-100 flex flex-col items-center justify-center h-full hover:-translate-y-1 transition-transform">
+                  <span className="bg-[#E6F7FD] text-[#00AEEF] p-4 rounded-none mb-4">
                     <sector.icon size={26} strokeWidth={1.5} />
                   </span>
                   <h4 className="font-sans font-bold text-[14.5px] text-[#0B0E1A] leading-tight">
@@ -264,7 +264,7 @@ function SplitSection({ title, highlight, text, img, imageSide = "right", bg = "
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="rounded-3xl overflow-hidden min-h-[320px] sm:min-h-[400px] shadow-sm"
+      className="rounded-none overflow-hidden min-h-[320px] sm:min-h-[400px] shadow-sm"
     >
       <img src={img} alt="" className="w-full h-full object-cover" />
     </motion.div>

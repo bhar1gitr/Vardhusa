@@ -17,25 +17,25 @@ export default function Innovation() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="relative rounded-3xl overflow-hidden min-h-[420px]">
+          <div className="relative rounded-none overflow-hidden min-h-[420px]">
             <img
               src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80"
               alt="Engineer at work"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/10" />
-            <button className="absolute top-5 right-5 bg-white text-[#00AEEF] rounded-full p-3 hover:-translate-y-0.5 transition-transform shadow-md">
+            <button className="absolute top-5 right-5 bg-white text-[#00AEEF] rounded-none p-3 hover:-translate-y-0.5 transition-transform shadow-md">
               <ArrowUpRight size={18} strokeWidth={2.5} />
             </button>
-            <div className="absolute bottom-5 left-5 flex items-center gap-2 bg-white rounded-full pl-3 pr-4 py-2 shadow-lg">
-              <span className="bg-[#00AEEF] text-white rounded-full p-1.5">
+            <div className="absolute bottom-5 left-5 flex items-center gap-2 bg-white rounded-none pl-3 pr-4 py-2 shadow-lg">
+              <span className="bg-[#00AEEF] text-white rounded-none p-1.5">
                 <Target size={14} />
               </span>
               <span className="text-[13.5px] font-semibold text-gray-900">You are one step away from your Goal</span>
             </div>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden min-h-[420px]">
+          <div className="relative rounded-none overflow-hidden min-h-[420px]">
             <img
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
               alt="Modern workspace"
