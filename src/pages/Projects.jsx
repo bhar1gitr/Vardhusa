@@ -4,7 +4,7 @@ import { MapPin } from "lucide-react";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 
-// Import all 8 project images correctly from assets
+// Import all project images correctly from assets matching file explorer names
 import project1 from "../assets/projects/1 LEH Airport.png";
 import project2 from "../assets/projects/2 Conscient One.jpg";
 import project3 from "../assets/projects/3 Dhoot Time Arcade 1.jpg";
@@ -13,6 +13,14 @@ import project5 from "../assets/projects/5 schott kaisha.jpeg";
 import project6 from "../assets/projects/6 Godrej Boulevard.jpeg";
 import project7 from "../assets/projects/7 Golf Green.jpeg";
 import project8 from "../assets/projects/8 Experion Capital.jpg";
+import project9 from "../assets/projects/Aisat Jewar Aiprport.jpeg";
+import project10 from "../assets/projects/BDD Worli.jpeg";
+import project11 from "../assets/projects/Birla Navya.jpeg";
+import project12 from "../assets/projects/Experio.jpeg";
+import project13 from "../assets/projects/Habitat Prime.jpeg";
+import project14 from "../assets/projects/Natura 1Oak.jpeg";
+import project15 from "../assets/projects/TCG Pune.jpeg";
+import project16 from "../assets/projects/TCS Pune.jpeg";
 
 const CATEGORIES = [
   "All",
@@ -82,6 +90,62 @@ const PROJECTS = [
     category: "Commercial",
     scope: "Plumbing & Firefighting",
     img: project8,
+  },
+  {
+    name: "Aisat Jewar Airport",
+    location: "Jewar, UP",
+    category: "Industrial",
+    scope: "Plumbing & Firefighting",
+    img: project9,
+  },
+  {
+    name: "BDD Worli",
+    location: "Mumbai, Maharashtra",
+    category: "Residential",
+    scope: "Plumbing & Firefighting",
+    img: project10,
+  },
+  {
+    name: "Birla Navya",
+    location: "Gurgaon, Haryana",
+    category: "Residential",
+    scope: "Plumbing & Firefighting",
+    img: project11,
+  },
+  {
+    name: "Experio",
+    location: "Lucknow, UP",
+    category: "Commercial",
+    scope: "Plumbing & Firefighting",
+    img: project12,
+  },
+  {
+    name: "Habitat Prime",
+    location: "Gurgaon, Haryana",
+    category: "Residential",
+    scope: "Plumbing & Firefighting",
+    img: project13,
+  },
+  {
+    name: "Natura 1Oak",
+    location: "Lucknow, UP",
+    category: "Residential",
+    scope: "Plumbing & Firefighting",
+    img: project14,
+  },
+  {
+    name: "TCG Pune",
+    location: "Pune, Maharashtra",
+    category: "Residential",
+    scope: "Plumbing & Firefighting",
+    img: project15,
+  },
+  {
+    name: "TCS Pune",
+    location: "Pune, Maharashtra",
+    category: "Commercial",
+    scope: "Plumbing & Firefighting",
+    img: project16,
   },
 ];
 
