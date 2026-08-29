@@ -54,10 +54,10 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="container mx-auto px-4 lg:px-8 pt-6 pb-12">
-      <div className="relative overflow-hidden min-h-[85vh] flex flex-col rounded-none">
+    <section id="home" className="w-full px-4 sm:px-6 lg:px-12 pt-6 pb-12">
+      <div className="max-w-[1440px] mx-auto relative overflow-hidden min-h-[85vh] flex flex-col rounded-none shadow-xl">
         
-        {/* Background Image Carousel Slides (Centered Properly) */}
+        {/* Background Image Carousel Slides (Fully Centered & Responsive) */}
         {BACKGROUND_IMAGES.map((img, index) => (
           <div
             key={index}
@@ -72,34 +72,34 @@ export default function Hero() {
         ))}
 
         {/* Dark Gradient Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128]/80 via-[#0a1128]/60 to-[#0a1128]/95 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128]/85 via-[#0a1128]/65 to-[#0a1128]/95 z-0" />
 
         {/* Hero Content */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pt-24 pb-16">
           <h1 className="font-sans font-extrabold text-white text-[36px] sm:text-[48px] md:text-[60px] leading-[1.1] max-w-5xl tracking-tight">
-            DESIGN. BUILD. DELIVER.
+            Design. Build. Deliver.
           </h1>
           <p className="text-white/90 text-[16px] md:text-[18px] max-w-3xl mt-6 leading-relaxed font-medium">
             One integrated partner for end-to-end EPC solution, from concept to completion.
           </p>
-          <button className="mt-10 flex items-center gap-2.5 bg-white hover:bg-gray-50 text-gray-900 font-bold rounded-none px-6 py-3.5 text-[15px] transition-colors shadow-lg group">
+          {/* <button className="mt-10 flex items-center gap-2.5 bg-white hover:bg-gray-50 text-gray-900 font-bold rounded-none px-6 py-3.5 text-[15px] transition-colors shadow-lg group">
             Why Vardhusa
             <ArrowRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </button> */}
         </div>
 
         {/* Carousel Navigation Controls (Left & Right Arrows) */}
         <div className="absolute right-6 bottom-36 z-20 flex items-center gap-2">
           <button
             onClick={handlePrev}
-            className="w-10 h-10 bg-black/40 hover:bg-[#00AEEF] text-white flex items-center justify-center backdrop-blur-md transition-colors rounded-none border border-white/10"
+            className="w-10 h-10 bg-black/40 hover:bg-[#00AEEF] text-white flex items-center justify-center backdrop-blur-md transition-colors rounded-none border border-white/10 shadow-md cursor-pointer"
             aria-label="Previous slide"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={handleNext}
-            className="w-10 h-10 bg-black/40 hover:bg-[#00AEEF] text-white flex items-center justify-center backdrop-blur-md transition-colors rounded-none border border-white/10"
+            className="w-10 h-10 bg-black/40 hover:bg-[#00AEEF] text-white flex items-center justify-center backdrop-blur-md transition-colors rounded-none border border-white/10 shadow-md cursor-pointer"
             aria-label="Next slide"
           >
             <ChevronRight size={20} />

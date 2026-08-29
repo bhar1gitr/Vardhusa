@@ -4,6 +4,16 @@ import { MapPin } from "lucide-react";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 
+// Import all 8 project images correctly from assets
+import project1 from "../assets/projects/1 LEH Airport.png";
+import project2 from "../assets/projects/2 Conscient One.jpg";
+import project3 from "../assets/projects/3 Dhoot Time Arcade 1.jpg";
+import project4 from "../assets/projects/4 Indospace Warehouse.jpeg";
+import project5 from "../assets/projects/5 schott kaisha.jpeg";
+import project6 from "../assets/projects/6 Godrej Boulevard.jpeg";
+import project7 from "../assets/projects/7 Golf Green.jpeg";
+import project8 from "../assets/projects/8 Experion Capital.jpg";
+
 const CATEGORIES = [
   "All",
   "Residential",
@@ -18,46 +28,60 @@ const CATEGORIES = [
 
 const PROJECTS = [
   {
-    name: "Piramal North Tower",
-    location: "Mahalaxmi, Mumbai",
+    name: "Leh Airport",
+    location: "Ladakh, India",
+    category: "Infrastructure",
+    scope: "Plumbing & Firefighting",
+    img: project1,
+  },
+  {
+    name: "Conscient One",
+    location: "Gurugram, Haryana",
+    category: "Commercial",
+    scope: "Plumbing & Firefighting",
+    img: project2,
+  },
+  {
+    name: "Time Arcade",
+    location: "Gurugram, Haryana",
+    category: "Commercial",
+    scope: "Plumbing & Firefighting",
+    img: project3,
+  },
+  {
+    name: "Indospace Badli",
+    location: "Badli, Haryana",
+    category: "Industrial",
+    scope: "Firefighting",
+    img: project4,
+  },
+  {
+    name: "Schott Kaisha",
+    location: "India",
+    category: "Industrial",
+    scope: "Plumbing & Firefighting",
+    img: project5,
+  },
+  {
+    name: "Godrej Boulevard",
+    location: "India",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
+    img: project6,
   },
   {
-    name: "Orion Business Park",
-    location: "BKC, Mumbai",
-    category: "Commercial",
-    scope: "Full MEP",
-    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    name: "Coastal Metro Depot",
-    location: "Navi Mumbai",
-    category: "Infrastructure",
-    scope: "Mechanical & Electrical",
-    img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    name: "Serene Heights",
-    location: "Thane, Maharashtra",
+    name: "Golf Green",
+    location: "India",
     category: "Residential",
-    scope: "Plumbing",
-    img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80",
+    scope: "Plumbing & Firefighting",
+    img: project7,
   },
   {
-    name: "Vertex Corporate Plaza",
-    location: "Lower Parel, Mumbai",
+    name: "Experion Capital",
+    location: "India",
     category: "Commercial",
-    scope: "Electrical & Firefighting",
-    img: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    name: "Riverfront Pumping Station",
-    location: "Pune, Maharashtra",
-    category: "Infrastructure",
-    scope: "Mechanical",
-    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=900&q=80",
+    scope: "Plumbing & Firefighting",
+    img: project8,
   },
 ];
 
@@ -78,7 +102,7 @@ export default function Projects() {
         eyebrow="Our Projects"
         title="Projects That Define"
         highlight="Our Expertise"
-        subtitle="A growing portfolio of residential towers, commercial developments, and infrastructure works across Maharashtra."
+        subtitle="A growing portfolio of residential towers, commercial developments, and infrastructure works across regions."
         img="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
       />
 
