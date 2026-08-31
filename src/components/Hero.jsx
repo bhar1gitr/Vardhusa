@@ -12,10 +12,10 @@ import project7 from "../assets/projects/7 Golf Green.jpeg";
 import project8 from "../assets/projects/8 Experion Capital.jpg";
 
 const STATS = [
-  { value: "3+", label: "Years of Experience", filled: false },
-  { value: "17+", label: "Projects in 2021-2025", filled: true },
-  { value: "200+", label: "Manpower with us", filled: false },
-  { value: "8+", label: "Area we hold", filled: false },
+  { value: "3+", label: "Years of Experience" },
+  { value: "17+", label: "Projects in 2021-2025" },
+  { value: "200+", label: "Manpower with us" },
+  { value: "8+", label: "Area we hold" },
 ];
 
 // Array of background images for the carousel
@@ -54,10 +54,10 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="w-full px-4 sm:px-6 lg:px-12 pt-6 pb-12">
-      <div className="max-w-[1440px] mx-auto relative overflow-hidden min-h-[85vh] flex flex-col rounded-none shadow-xl">
+    <section id="home" className="w-full px-4 sm:px-6 lg:px-12 pt-4 pb-8">
+      <div className="max-w-[1440px] mx-auto relative overflow-hidden min-h-[65vh] flex flex-col justify-between rounded-none shadow-xl">
         
-        {/* Background Image Carousel Slides (Fully Centered & Responsive) */}
+        {/* Background Image Carousel Slides */}
         {BACKGROUND_IMAGES.map((img, index) => (
           <div
             key={index}
@@ -71,56 +71,43 @@ export default function Hero() {
           />
         ))}
 
-        {/* Dark Gradient Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128]/85 via-[#0a1128]/65 to-[#0a1128]/95 z-0" />
-
-        {/* Hero Content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pt-24 pb-16">
-          <h1 className="font-sans font-extrabold text-white text-[36px] sm:text-[48px] md:text-[60px] leading-[1.1] max-w-5xl tracking-tight">
-            Design. Build. Deliver.
-          </h1>
-          <p className="text-white/90 text-[16px] md:text-[18px] max-w-3xl mt-6 leading-relaxed font-medium">
-            One integrated partner for end-to-end EPC solution, from concept to completion.
-          </p>
-          {/* <button className="mt-10 flex items-center gap-2.5 bg-white hover:bg-gray-50 text-gray-900 font-bold rounded-none px-6 py-3.5 text-[15px] transition-colors shadow-lg group">
-            Why Vardhusa
-            <ArrowRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
-          </button> */}
-        </div>
+        {/* Lighter Transparent Overlay for sync and high image visibility */}
+        <div className="absolute inset-0 bg-black/40 z-0" />
 
         {/* Carousel Navigation Controls (Left & Right Arrows) */}
-        <div className="absolute right-6 bottom-36 z-20 flex items-center gap-2">
+        <div className="absolute right-6 top-6 z-20 flex items-center gap-2">
           <button
             onClick={handlePrev}
-            className="w-10 h-10 bg-black/40 hover:bg-[#00AEEF] text-white flex items-center justify-center backdrop-blur-md transition-colors rounded-none border border-white/10 shadow-md cursor-pointer"
+            className="w-9 h-9 bg-black/40 hover:bg-[#00AEEF] text-white flex items-center justify-center backdrop-blur-md transition-colors rounded-none border border-white/10 shadow-md cursor-pointer"
             aria-label="Previous slide"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={18} />
           </button>
           <button
             onClick={handleNext}
-            className="w-10 h-10 bg-black/40 hover:bg-[#00AEEF] text-white flex items-center justify-center backdrop-blur-md transition-colors rounded-none border border-white/10 shadow-md cursor-pointer"
+            className="w-9 h-9 bg-black/40 hover:bg-[#00AEEF] text-white flex items-center justify-center backdrop-blur-md transition-colors rounded-none border border-white/10 shadow-md cursor-pointer"
             aria-label="Next slide"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={18} />
           </button>
         </div>
 
-        {/* Stats Grid */}
-        <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 px-4 md:px-8 pb-4 md:pb-8">
-          {STATS.map((s) => (
-            <div
-              key={s.label}
-              className={`rounded-none px-6 py-8 backdrop-blur-md transition-colors ${
-                s.filled ? "bg-[#00AEEF] text-white" : "bg-black/30 text-white hover:bg-black/40"
-              }`}
-            >
-              <p className="font-sans font-extrabold text-3xl md:text-4xl">{s.value}</p>
-              <p
-                className={`text-[13px] md:text-[14px] mt-2 font-medium ${
-                  s.filled ? "text-white/90" : "text-white/70"
-                }`}
-              >
+        {/* Hero Content */}
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pt-16 pb-10">
+          <h1 className="font-sans font-extrabold text-white text-[32px] sm:text-[44px] md:text-[56px] leading-[1.1] max-w-5xl tracking-tight drop-shadow-md">
+            Design. Build. Deliver.
+          </h1>
+          <p className="text-white/95 text-[15px] md:text-[17px] max-w-2xl mt-4 leading-relaxed font-medium drop-shadow">
+            One integrated partner for end-to-end EPC solutions, from concept to completion.
+          </p>
+        </div>
+
+        {/* Stats Grid - Box format removed, layout streamlined for maximum background exposure */}
+        <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-4 px-6 md:px-10 py-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-[2px]">
+          {STATS.map((s, idx) => (
+            <div key={s.label} className={`text-white ${idx !== 0 ? "md:border-l md:border-white/15 md:pl-4" : ""}`}>
+              <p className="font-sans font-extrabold text-2xl md:text-3xl text-[#00AEEF] drop-shadow">{s.value}</p>
+              <p className="text-[12.5px] md:text-[13.5px] mt-1 font-medium text-white/90 drop-shadow">
                 {s.label}
               </p>
             </div>
