@@ -55,7 +55,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="w-full px-4 sm:px-6 lg:px-12 pt-4 pb-8">
-      <div className="max-w-[1440px] mx-auto relative overflow-hidden min-h-[65vh] flex flex-col justify-between rounded-none shadow-xl">
+      <div className="max-w-[1440px] mx-auto relative overflow-hidden min-h-[65vh] flex flex-col justify-between rounded-none shadow-xl" style={{ height: '85vh' }}>
         
         {/* Background Image Carousel Slides */}
         {BACKGROUND_IMAGES.map((img, index) => (
