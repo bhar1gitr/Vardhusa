@@ -1,4 +1,3 @@
-// Import all project images correctly from assets matching file explorer names
 import project1 from "../assets/projects/1 LEH Airport.png";
 import project2 from "../assets/projects/2 Conscient One.jpg";
 import project3 from "../assets/projects/3 Dhoot Time Arcade 1.jpg";
@@ -99,70 +98,75 @@ export const PROJECTS = [
     location: "Jewar, UP",
     category: "Infrastructure",
     scope: "Plumbing & Firefighting",
-    img: project9, // 9
+    // img: project9,
+    img: project14,
   },
   {
     name: "BDD Worli",
     location: "Mumbai, Maharashtra",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project14, // 14
+    img: project10,
   },
   {
     name: "Birla Navya",
     location: "Gurugram, Haryana",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project9, // 9
+    // img: project11,
+    img: project16,
   },
   {
     name: "Experio Retail",
     location: "Lucknow, UP",
     category: "Commercial",
     scope: "Plumbing & Firefighting",
-    img: project14, // 14
+    img: project12,
   },
   {
     name: "Habitat Prime",
     location: "Gurugram, Haryana",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project11, // 11
+    // img: project13,
+    img: project11,
   },
   {
     name: "Natura 1Oak",
     location: "Lucknow, UP",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project16, // 16
+    // img: project14,
+    img: project9,
   },
   {
     name: "TCG Pune",
     location: "Pune, Maharashtra",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project16, // 16
+    img: project15,
   },
   {
     name: "TCS Pune",
     location: "Pune, Maharashtra",
     category: "Commercial",
     scope: "Plumbing & Firefighting",
-    img: project13, // 13
+    // img: project16,
+    img: project13,
   },
   {
     name: "Conscient Elevate",
     location: "Gurugram, Haryana",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project13, // 13
+    img: p1,
   },
   {
     name: "Bounce Gurgaon",
     location: "Gurugram, Haryana",
     category: "Commercial",
     scope: "Plumbing & Firefighting",
-    img: project11, // 11
+    img: p2,
   },
   {
     name: "Signature Global City 92",
