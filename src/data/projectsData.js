@@ -207,8 +207,8 @@ export const PROJECTS = [
 ];
 
 export const STATS = [
-  { value: "25+", label: "Projects Delivered" },
-  { value: "8+", label: "Cities Covered" },
-  { value: "3", label: "Sectors Served" },
+  { value: "50+", label: "Projects Delivered" },
+  { value: "8+", label: "States Covered" },
+  { value: "8+", label: "Sectors Served" },
   { value: "200+", label: "People on Site" },
 ];

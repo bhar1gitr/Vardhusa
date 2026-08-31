@@ -12,7 +12,6 @@ export default function Projects() {
   return (
     <>
       <PageHero
-        eyebrow="Our Projects"
         title="Projects That Define"
         highlight="Our Expertise"
         subtitle="A growing portfolio of residential towers, commercial developments, and infrastructure works across regions."
