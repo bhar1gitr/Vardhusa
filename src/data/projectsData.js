@@ -15,6 +15,7 @@ import project13 from "../assets/projects/Habitat Prime.jpeg";
 import project14 from "../assets/projects/Natura 1Oak.jpeg";
 import project15 from "../assets/projects/TCG Pune.jpeg";
 import project16 from "../assets/projects/TCS Pune.jpeg";
+import project17 from "../assets/projects/nccro.jpeg";
 import p1 from "../assets/projects/1.jpeg";
 import p2 from "../assets/projects/2.jpeg";
 import p3 from "../assets/projects/3.jpeg";
@@ -98,70 +99,70 @@ export const PROJECTS = [
     location: "Jewar, UP",
     category: "Infrastructure",
     scope: "Plumbing & Firefighting",
-    img: project9,
+    img: project9, // 9
   },
   {
     name: "BDD Worli",
     location: "Mumbai, Maharashtra",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project10,
+    img: project14, // 14
   },
   {
     name: "Birla Navya",
     location: "Gurugram, Haryana",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project11,
+    img: project9, // 9
   },
   {
     name: "Experio Retail",
     location: "Lucknow, UP",
     category: "Commercial",
     scope: "Plumbing & Firefighting",
-    img: project12,
+    img: project14, // 14
   },
   {
     name: "Habitat Prime",
     location: "Gurugram, Haryana",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project13,
+    img: project11, // 11
   },
   {
     name: "Natura 1Oak",
     location: "Lucknow, UP",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project14,
+    img: project16, // 16
   },
   {
     name: "TCG Pune",
     location: "Pune, Maharashtra",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project15,
+    img: project16, // 16
   },
   {
     name: "TCS Pune",
     location: "Pune, Maharashtra",
     category: "Commercial",
     scope: "Plumbing & Firefighting",
-    img: project16,
+    img: project13, // 13
   },
   {
     name: "Conscient Elevate",
     location: "Gurugram, Haryana",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: p1,
+    img: project13, // 13
   },
   {
     name: "Bounce Gurgaon",
     location: "Gurugram, Haryana",
     category: "Commercial",
     scope: "Plumbing & Firefighting",
-    img: p2,
+    img: project11, // 11
   },
   {
     name: "Signature Global City 92",
@@ -175,7 +176,7 @@ export const PROJECTS = [
     location: "Lucknow, UP",
     category: "Institutional",
     scope: "Plumbing & Firefighting",
-    img: p4,
+    img: project17,
   },
   {
     name: "Sare Altura",
