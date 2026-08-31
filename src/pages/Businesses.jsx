@@ -112,7 +112,7 @@ export default function Businesses() {
   return (
     <>
       <PageHero
-        eyebrow="Our Businesses"
+        eyebrow="Our Solutions"
         title="Comprehensive MEP Services,"
         highlight="Under One Roof"
         subtitle="From first sketch to final commissioning, we design, engineer, and install the systems that keep buildings running."
@@ -124,11 +124,10 @@ export default function Businesses() {
         <div className="container mx-auto px-4 lg:px-8">
           <Reveal>
             <h2 className="font-sans font-extrabold text-[30px] md:text-[40px] leading-[1.1] text-[#0B0E1A] max-w-xl mb-4">
-              What We <span className="text-[#00AEEF]">Deliver</span>
+              Our <span className="text-[#00AEEF]">Expertise</span>
             </h2>
             <p className="text-gray-500 text-[15px] max-w-xl mb-14">
-              Eight disciplines, one accountable team — so nothing falls through the cracks
-              between trades.
+              Eight disciplines, one accountable team — so nothing falls through the cracks between trades.
             </p>
           </Reveal>
 
@@ -223,7 +222,7 @@ export default function Businesses() {
         <div className="container mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <Reveal>
             <h2 className="font-sans font-extrabold text-[30px] sm:text-[40px] leading-[1.1] text-[#0B0E1A] mb-5">
-              One Team, <span className="text-[#00AEEF]">Every Trade</span>
+              One accountable partner. <span className="text-[#00AEEF]">Every discipline.</span>
             </h2>
             <p className="text-gray-500 text-[15px] leading-relaxed max-w-lg mb-4">
               Most projects juggle separate contractors for mechanical, electrical, plumbing, and
