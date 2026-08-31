@@ -1,60 +1,11 @@
 import { motion } from "framer-motion";
 import { 
-  Building2, 
   Briefcase, 
   Landmark, 
   HeartPulse, 
-  Coffee, 
-  Factory, 
-  Plane, 
-  ShoppingCart, 
-  Zap, 
-  Home, 
   CheckCircle2 
 } from "lucide-react";
 import Reveal from "../components/Reveal";
-
-// Import all client images exactly as named in the src/assets/clients folder
-import imgShapoorji from "../assets/clients/ShapoorjiPallonji.png";
-import imgExperion from "../assets/clients/Experion-Developer.png";
-import imgConscient from "../assets/clients/Conscient-Logo.jpg";
-import imgSchott from "../assets/clients/Schott-Kaisha.jpg";
-import imgDhoot from "../assets/clients/Dhoot.png";
-import imgAmanora from "../assets/clients/Amanora.png";
-import imgCourtyard from "../assets/clients/courtyard.jpg";
-import imgRadisson from "../assets/clients/radisson.png";
-import imgGrand from "../assets/clients/Grand.png";
-import imgClub from "../assets/clients/club.jpg";
-import imgAditya from "../assets/clients/Aditya-Birla-Group.jpg";
-import imgAashima from "../assets/clients/aashima-mall.jpg";
-
-const SECTORS = [
-  { name: "Commercial & Corporate", icon: Briefcase },
-  { name: "Governments & PSU", icon: Landmark },
-  { name: "Health Care", icon: HeartPulse },
-  { name: "Hospitality", icon: Coffee },
-  { name: "Industrial", icon: Factory },
-  { name: "Infrastructure (Airports, Ports)", icon: Plane },
-  { name: "Mall & Multiplex", icon: ShoppingCart },
-  { name: "Power Plants", icon: Zap },
-  { name: "Residential", icon: Home },
-];
-
-// Use the imported variables instead of string paths
-const CLIENTS = [
-  imgShapoorji,
-  imgExperion,
-  imgConscient,
-  imgSchott,
-  imgDhoot,
-  imgAmanora,
-  imgCourtyard,
-  imgRadisson,
-  imgGrand,
-  imgClub,
-  imgAditya,
-  imgAashima,
-];
 
 const QUALITY_POLICY = [
   "Establish, periodically review and achieve quality objectives within targets at all levels.",
@@ -134,64 +85,6 @@ export default function About() {
           Executing High-Profile Projects All Over India
         </motion.h2>
       </Reveal>
-
-      {/* Sectoral Presence */}
-      <section className="bg-[#F8F9FA] py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <Reveal className="text-center mb-16">
-            <h2 className="font-sans font-extrabold text-[32px] md:text-[42px] leading-[1.15] text-[#0B0E1A]">
-              Sectoral <span className="text-[#00AEEF]">Presence</span>
-            </h2>
-            <p className="text-gray-500 text-[15.5px] mt-4 max-w-2xl mx-auto">
-              We have successfully executed and are currently executing projects across diverse sectors throughout the nation.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
-            {SECTORS.map((sector, i) => (
-              <Reveal key={sector.name} delay={i * 0.05}>
-                <div className="bg-white rounded-none p-6 text-center shadow-sm border border-gray-100 flex flex-col items-center justify-center h-full hover:-translate-y-1 transition-transform">
-                  <span className="bg-[#E6F7FD] text-[#00AEEF] p-4 rounded-none mb-4">
-                    <sector.icon size={26} strokeWidth={1.5} />
-                  </span>
-                  <h4 className="font-sans font-bold text-[14.5px] text-[#0B0E1A] leading-tight">
-                    {sector.name}
-                  </h4>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Clients */}
-      <section className="bg-white py-20 border-t border-gray-100">
-        <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
-          <Reveal>
-            <h2 className="font-sans font-extrabold text-[28px] md:text-[34px] leading-[1.1] text-[#0B0E1A] mb-8" style={{ textAlign:'center' }}>
-              Our Clients
-            </h2>
-          </Reveal>
-          
-          <Reveal delay={0.1}>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-t border-l border-gray-100">
-              {CLIENTS.map((imgSrc, idx) => (
-                <div 
-                  key={idx} 
-                  className="border-b border-r border-gray-100 flex items-center justify-center p-8 h-[140px] md:h-[160px] bg-white hover:bg-gray-50 transition-colors"
-                >
-                  <img 
-                    src={imgSrc} 
-                    alt={`Client logo ${idx + 1}`} 
-                    className="max-h-full max-w-full object-contain" 
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* Our Vision */}
       <SplitSection
