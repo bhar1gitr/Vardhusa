@@ -114,14 +114,15 @@ export const PROJECTS = [
     category: "Residential",
     scope: "Plumbing & Firefighting",
     // img: project11,
-    img: project16,
+    img: project13,
   },
   {
     name: "Experio Retail",
     location: "Lucknow, UP",
     category: "Commercial",
     scope: "Plumbing & Firefighting",
-    img: project12,
+    // img: project12,
+    img: project15,
   },
   {
     name: "Habitat Prime",
@@ -129,7 +130,8 @@ export const PROJECTS = [
     category: "Residential",
     scope: "Plumbing & Firefighting",
     // img: project13,
-    img: project11,
+    // img: project11,
+    img: project16,
   },
   {
     name: "Natura 1Oak",
@@ -144,7 +146,8 @@ export const PROJECTS = [
     location: "Pune, Maharashtra",
     category: "Residential",
     scope: "Plumbing & Firefighting",
-    img: project15,
+    // img: project15,
+    img: project12,
   },
   {
     name: "TCS Pune",
@@ -152,7 +155,7 @@ export const PROJECTS = [
     category: "Commercial",
     scope: "Plumbing & Firefighting",
     // img: project16,
-    img: project13,
+     img: project11,
   },
   {
     name: "Conscient Elevate",
