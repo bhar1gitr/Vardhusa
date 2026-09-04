@@ -18,8 +18,10 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 10);
+
     window.addEventListener("scroll", onScroll);
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -28,93 +30,131 @@ export default function Navbar() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const isActive = (to) => (to === "/" ? pathname === "/" : pathname.startsWith(to));
+  const isActive = (to) =>
+    to === "/" ? pathname === "/" : pathname.startsWith(to);
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white transition-shadow ${
-        scrolled ? "shadow-[0_1px_0_0_rgba(11,14,26,0.08)]" : "border-b border-gray-100"
+      className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
+        scrolled
+          ? "shadow-[0_4px_20px_rgba(0,0,0,0.07)]"
+          : "border-b border-[#E9E9E9]"
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between py-5">
-        
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <img 
-            src={logo} 
-            alt="Vardhusa Logo" 
-            className="h-[28px] md:h-[32px] w-auto object-contain" 
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-[82px] flex items-center justify-between">
+
+        {/* LOGO */}
+        <Link to="/" className="flex items-center shrink-0">
+          <img
+            src={logo}
+            alt="Vardhusa Logo"
+            className="h-[32px] md:h-[36px] w-auto object-contain"
           />
         </Link>
 
-        {/* Desktop Nav - Clean technical layout with creative indicator */}
+        {/* DESKTOP NAV */}
         <nav className="hidden lg:flex items-center gap-2">
           {LINKS.map((link) => {
             const active = isActive(link.to);
+
             return (
               <Link
                 key={link.label}
                 to={link.to}
-                className={`relative px-5 py-2 rounded-none text-[14.5px] font-semibold transition-colors ${
-                  active 
-                    ? "text-[#00AEEF]" 
-                    : "text-gray-600 hover:text-gray-900"
+                className={`relative px-4 xl:px-5 py-3 text-[14px] font-semibold transition-colors duration-300 ${
+                  active
+                    ? "text-[#202020]"
+                    : "text-[#626262] hover:text-[#202020]"
                 }`}
               >
                 {link.label}
-                {/* Sharp bottom accent indicator line for active state */}
+
                 {active && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#00AEEF] rounded-none" />
+                  <span className="absolute bottom-[2px] left-1/2 -translate-x-1/2 w-[26px] h-[3px] bg-[#F6C62E]" />
                 )}
               </Link>
             );
           })}
         </nav>
 
-        {/* Actions */}
-        <div className="hidden md:flex items-center gap-4">
-          <button className="flex items-center gap-2 border border-gray-300 rounded-none px-5 py-2.5 text-[14.5px] font-semibold text-gray-800 hover:border-gray-900 transition-colors">
-            <PlayCircle size={18} strokeWidth={2} className="text-gray-600" />
+        {/* ACTIONS */}
+        <div className="hidden md:flex items-center gap-3">
+          <button
+            type="button"
+            className="flex items-center gap-2 px-5 py-2.5 text-[14px] font-semibold text-[#444] border border-[#D8D8D8] hover:border-[#F6C62E] hover:bg-[#FFFBEF] transition-all duration-300"
+          >
+            <PlayCircle
+              size={18}
+              strokeWidth={2}
+              className="text-[#DCAA00]"
+            />
             Gallery
           </button>
-          <button className="bg-[#00AEEF] text-white rounded-none px-7 py-2.5 text-[14.5px] font-semibold hover:bg-[#0098d1] transition-colors">
+
+          <Link
+            to="/contact"
+            className="bg-[#F6C62E] text-[#202020] border border-[#F6C62E] px-7 py-2.5 text-[14px] font-bold hover:bg-[#202020] hover:border-[#202020] hover:text-white transition-all duration-300"
+          >
             Contact
-          </button>
+          </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button className="lg:hidden text-gray-800" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        {/* MOBILE BUTTON */}
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+          className="lg:hidden flex items-center justify-center w-10 h-10 text-[#202020]"
+        >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       {open && (
-        <div className="lg:hidden border-t border-gray-100 px-6 pb-6 pt-2 flex flex-col gap-2 bg-white shadow-lg absolute w-full left-0">
-          {LINKS.map((link) => {
-            const active = isActive(link.to);
-            return (
-              <Link
-                key={link.label}
-                to={link.to}
-                onClick={() => setOpen(false)}
-                className={`text-left px-4 py-3 rounded-none text-[15px] font-semibold border-l-2 ${
-                  active 
-                    ? "border-[#00AEEF] bg-gray-50 text-[#00AEEF]" 
-                    : "border-transparent text-gray-600"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-          <div className="flex flex-col gap-3 mt-4">
-            <button className="w-full flex items-center justify-center gap-2 border border-gray-300 rounded-none px-5 py-3 text-[14.5px] font-semibold">
-              <PlayCircle size={18} /> Gallery
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-[#EAEAEA] shadow-[0_12px_30px_rgba(0,0,0,0.08)] px-6 py-5">
+
+          <div className="flex flex-col">
+            {LINKS.map((link) => {
+              const active = isActive(link.to);
+
+              return (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  onClick={() => setOpen(false)}
+                  className={`relative px-4 py-3.5 text-[15px] font-semibold border-b border-[#EEEEEE] ${
+                    active
+                      ? "text-[#202020] bg-[#FFFBEF]"
+                      : "text-[#666666] hover:text-[#202020]"
+                  }`}
+                >
+                  {active && (
+                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-6 bg-[#F6C62E]" />
+                  )}
+
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-col gap-3 mt-5">
+            <button
+              type="button"
+              className="w-full flex items-center justify-center gap-2 border border-[#D8D8D8] text-[#333] px-5 py-3 text-[14px] font-semibold"
+            >
+              <PlayCircle size={18} className="text-[#DCAA00]" />
+              Gallery
             </button>
-            <button className="w-full bg-[#00AEEF] text-white rounded-none px-6 py-3 text-[14.5px] font-semibold">
+
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="w-full text-center bg-[#F6C62E] text-[#202020] px-6 py-3 text-[14px] font-bold"
+            >
               Contact
-            </button>
+            </Link>
           </div>
         </div>
       )}

@@ -17,65 +17,131 @@ export default function Footer() {
   const [email, setEmail] = useState("");
 
   return (
-    <footer className="bg-[#F8F9FA] min-h-[80vh] flex flex-col justify-between pt-12 pb-6">
-      <div className="container mx-auto px-6 lg:px-12 flex-1 flex flex-col justify-between">
+    <footer className="bg-[#F5F5F5] pt-14 pb-6">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         
         {/* CTA Section */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-gray-200">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-10 border-b border-[#DDDDDD]">
+          
           <div className="max-w-xl">
-            <h2 className="font-sans font-extrabold text-[32px] md:text-[40px] leading-[1.2] text-[#0B0E1A]">
-              Ready To Work <span className="text-[#00AEEF]">With Us ?</span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-10 h-[3px] bg-[#F6C62E]" />
+
+              <span className="text-[12px] md:text-[13px] uppercase tracking-[0.16em] font-bold text-[#858585]">
+                Let's Build Together
+              </span>
+            </div>
+
+            <h2 className="font-sans font-extrabold text-[32px] md:text-[40px] leading-[1.15] text-[#202020]">
+              Ready To Work{" "}
+              <span className="text-[#D6A900]">
+                With Us?
+              </span>
             </h2>
-            <p className="text-gray-500 mt-1 text-[14px] md:text-[15px]">
-              Experience top-notch customer service and let us guide you on your journey
+
+            <p className="text-[#666666] mt-3 text-[14px] md:text-[15px] leading-relaxed">
+              Experience top-notch customer service and let us guide you on
+              your journey.
             </p>
           </div>
 
+          {/* Email Form */}
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="flex items-center bg-[#0B0E1A] rounded-none p-2 pl-5 w-full lg:w-[440px] shrink-0"
+            className="
+              flex
+              items-center
+              bg-[#202020]
+              p-2
+              pl-5
+              w-full
+              lg:w-[450px]
+              shrink-0
+            "
           >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Write your email here"
-              className="bg-transparent flex-1 outline-none text-white placeholder-gray-400 text-[14px] pr-4"
+              className="
+                bg-transparent
+                flex-1
+                outline-none
+                text-white
+                placeholder-[#9A9A9A]
+                text-[14px]
+                pr-4
+                min-w-0
+              "
             />
+
             <button
               type="submit"
-              className="flex items-center gap-2 bg-[#00AEEF] hover:bg-[#0098d1] text-white rounded-none px-6 py-3 text-[14px] font-semibold transition-colors shrink-0"
+              className="
+                flex
+                items-center
+                gap-2
+                bg-[#F6C62E]
+                text-[#202020]
+                px-6
+                py-3
+                text-[14px]
+                font-bold
+                hover:bg-white
+                transition-all
+                duration-300
+                shrink-0
+              "
             >
               Submit
-              <Send size={15} />
+              <Send size={15} strokeWidth={2.2} />
             </button>
           </form>
         </div>
 
-        {/* Middle Section: Logo, Description & Links */}
-        <div className="flex flex-col lg:flex-row justify-between gap-8 py-8">
+        {/* Middle Section */}
+        <div className="flex flex-col lg:flex-row justify-between gap-12 py-12">
+          
+          {/* Company Info */}
           <div>
-            <img 
-              src={logo} 
-              alt="Vardhusa Logo" 
-              className="h-[32px] w-auto object-contain mb-4" 
+            <img
+              src={logo}
+              alt="Vardhusa Logo"
+              className="h-[34px] w-auto object-contain mb-5"
             />
-            <p className="text-gray-500 text-[14px] leading-[1.7] max-w-[380px]">
-              Vardhusa Pvt Ltd is dedicated to providing comprehensive Mechanical, Plumbing, and
-              Firefighting services to residential, commercial, and infrastructure sectors.
+
+            <p className="text-[#666666] text-[14px] leading-[1.8] max-w-[400px]">
+              Vardhusa Pvt Ltd is dedicated to providing comprehensive
+              Mechanical, Plumbing, and Firefighting services to residential,
+              commercial, and infrastructure sectors.
             </p>
           </div>
 
-          <div className="flex gap-16 md:gap-24 lg:pr-8">
+          {/* Footer Links */}
+          <div className="flex flex-wrap gap-16 md:gap-24 lg:pr-8">
             {FOOTER_COLS.map((col) => (
               <div key={col.title}>
-                <h4 className="font-sans font-bold text-[16px] text-[#0B0E1A] mb-4">{col.title}</h4>
-                <ul className="flex flex-col gap-2.5">
+                
+                <h4 className="font-sans font-bold text-[16px] text-[#202020] mb-4 relative w-fit">
+                  {col.title}
+
+                  <span className="absolute -bottom-2 left-0 w-7 h-[2px] bg-[#F6C62E]" />
+                </h4>
+
+                <ul className="flex flex-col gap-2.5 mt-7">
                   {col.links.map((link) => (
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-gray-500 hover:text-[#00AEEF] text-[14px] font-medium transition-colors"
+                        className="
+                          text-[#666666]
+                          hover:text-[#D6A900]
+                          text-[14px]
+                          font-medium
+                          transition-colors
+                          duration-300
+                        "
                       >
                         {link}
                       </a>
@@ -88,12 +154,11 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-200 pt-6">
-          <p className="text-center text-gray-400 text-[13px] font-medium">
+        <div className="border-t border-[#DDDDDD] pt-6">
+          <p className="text-center text-[#8A8A8A] text-[13px] font-medium">
             Copyright © 2024 Vardhusa - An EPC Company
           </p>
         </div>
-
       </div>
     </footer>
   );
