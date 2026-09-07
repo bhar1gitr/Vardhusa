@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import { STATS } from "../data/projectsData";
+
 // Project Images
 import project1 from "../assets/projects/1 LEH Airport.png";
 import project2 from "../assets/projects/2 Conscient One.jpg";
@@ -10,25 +12,6 @@ import project5 from "../assets/projects/5 schott kaisha.jpeg";
 import project6 from "../assets/projects/6 Godrej Boulevard.jpeg";
 import project7 from "../assets/projects/7 Golf Green.jpeg";
 import project8 from "../assets/projects/8 Experion Capital.jpg";
-
-const STATS = [
-  {
-    value: "3+",
-    label: "Years of Experience",
-  },
-  {
-    value: "17+",
-    label: "Projects in 2021-2025",
-  },
-  {
-    value: "200+",
-    label: "Manpower with us",
-  },
-  {
-    value: "8+",
-    label: "Area we hold",
-  },
-];
 
 const BACKGROUND_IMAGES = [
   project1,
@@ -55,7 +38,7 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  // Previous slide
+  // Previous Slide
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0
@@ -64,7 +47,7 @@ export default function Hero() {
     );
   };
 
-  // Next slide
+  // Next Slide
   const handleNext = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex + 1) % BACKGROUND_IMAGES.length
@@ -74,7 +57,15 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="w-full bg-[#F3F3F3] px-4 sm:px-6 lg:px-12 pt-4 pb-10"
+      className="
+        w-full
+        bg-[#F3F3F3]
+        px-4
+        sm:px-6
+        lg:px-12
+        pt-4
+        pb-8
+      "
     >
       <div
         className="
@@ -82,9 +73,9 @@ export default function Hero() {
           max-w-[1440px]
           mx-auto
           overflow-hidden
-          min-h-[650px]
-          lg:min-h-[720px]
           bg-[#202020]
+          min-h-[620px]
+          lg:min-h-[680px]
         "
       >
         {/* =========================================
@@ -103,6 +94,7 @@ export default function Hero() {
               transition-all
               duration-1000
               ease-in-out
+
               ${
                 index === currentIndex
                   ? "opacity-100 scale-105"
@@ -118,7 +110,7 @@ export default function Hero() {
         ))}
 
         {/* =========================================
-            GREY / DARK IMAGE OVERLAY
+            DARK OVERLAY
         ========================================== */}
 
         <div
@@ -133,7 +125,8 @@ export default function Hero() {
           "
         />
 
-        {/* Bottom gradient */}
+        {/* Bottom Gradient */}
+
         <div
           className="
             absolute
@@ -153,8 +146,10 @@ export default function Hero() {
         <div
           className="
             absolute
-            right-6
-            top-6
+            right-5
+            sm:right-6
+            top-5
+            sm:top-6
             z-20
             flex
             items-center
@@ -164,11 +159,14 @@ export default function Hero() {
           {/* Previous */}
 
           <button
+            type="button"
             onClick={handlePrev}
             aria-label="Previous slide"
             className="
-              w-11
-              h-11
+              w-10
+              h-10
+              sm:w-11
+              sm:h-11
               flex
               items-center
               justify-center
@@ -189,11 +187,14 @@ export default function Hero() {
           {/* Next */}
 
           <button
+            type="button"
             onClick={handleNext}
             aria-label="Next slide"
             className="
-              w-11
-              h-11
+              w-10
+              h-10
+              sm:w-11
+              sm:h-11
               flex
               items-center
               justify-center
@@ -220,8 +221,8 @@ export default function Hero() {
           className="
             relative
             z-10
-            min-h-[540px]
-            lg:min-h-[600px]
+            min-h-[480px]
+            lg:min-h-[510px]
             flex
             items-center
           "
@@ -234,11 +235,13 @@ export default function Hero() {
               sm:px-10
               md:px-14
               lg:px-20
-              pt-24
-              pb-20
+              pt-20
+              sm:pt-24
+              pb-12
+              lg:pb-14
             "
           >
-            {/* Small heading */}
+            {/* Small Heading */}
 
             <div className="flex items-center gap-3 mb-5">
               <span className="w-10 h-[3px] bg-[#F6C62E]" />
@@ -288,53 +291,6 @@ export default function Hero() {
                 Deliver.
               </span>
             </h1>
-
-            {/* Description */}
-
-            <p
-              className="
-                mt-6
-                max-w-[610px]
-                text-[#E8E8E8]
-                text-[15px]
-                sm:text-[16px]
-                md:text-[17px]
-                leading-[1.75]
-                font-medium
-              "
-            >
-              One integrated partner for end-to-end EPC solutions,
-              from concept to completion.
-            </p>
-
-            {/* CTA Button */}
-
-            <a
-              href="#contact"
-              className="
-                mt-8
-                inline-flex
-                items-center
-                justify-center
-                min-w-[170px]
-                h-[54px]
-                bg-[#F6C62E]
-                text-[#202020]
-                px-7
-                text-[13px]
-                font-extrabold
-                uppercase
-                tracking-[0.08em]
-                border-2
-                border-[#F6C62E]
-                hover:bg-white
-                hover:border-white
-                transition-all
-                duration-300
-              "
-            >
-              Get In Touch
-            </a>
           </div>
         </div>
 
@@ -361,10 +317,12 @@ export default function Hero() {
               key={stat.label}
               className={`
                 relative
-                px-6
+                px-5
+                sm:px-6
                 md:px-7
-                py-7
-                transition-colors
+                py-6
+                lg:py-7
+                transition-all
                 duration-300
                 hover:bg-[#F6C62E]
                 group
@@ -389,7 +347,7 @@ export default function Hero() {
                   text-[#F6C62E]
                   group-hover:text-[#202020]
                   font-extrabold
-                  text-[30px]
+                  text-[28px]
                   sm:text-[34px]
                   md:text-[38px]
                   leading-none
@@ -407,7 +365,8 @@ export default function Hero() {
                   mt-2
                   text-[#5F5F5F]
                   group-hover:text-[#202020]
-                  text-[12.5px]
+                  text-[12px]
+                  sm:text-[12.5px]
                   md:text-[13.5px]
                   font-semibold
                   transition-colors
@@ -417,7 +376,7 @@ export default function Hero() {
                 {stat.label}
               </p>
 
-              {/* Hover underline */}
+              {/* Hover Bottom Line */}
 
               <div
                 className="

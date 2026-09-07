@@ -219,5 +219,5 @@ export const STATS = [
   { value: "50+", label: "Projects Delivered" },
   { value: "8+", label: "States Covered" },
   { value: "8+", label: "Sectors Served" },
-  { value: "200+", label: "People on Site" },
+  { value: "8+", label: "Year Experience" },
 ];

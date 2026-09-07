@@ -1,10 +1,17 @@
-import { Heart } from "lucide-react";
+import { useMemo } from "react";
+import { PROJECTS } from "../data/projectsData";
 
 export default function DominateFuture() {
+  // Pick 8 random project images
+  const galleryProjects = useMemo(() => {
+    return [...PROJECTS]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 8);
+  }, []);
+
   return (
     <section className="bg-[#F5F5F5]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28">
-        
         {/* Heading Area */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
           <div>
@@ -18,10 +25,7 @@ export default function DominateFuture() {
             <h2 className="font-sans font-extrabold text-[32px] md:text-[44px] leading-[1.1] text-[#202020]">
               Built to Lead, Engineered to
               <br />
-              Dominate{" "}
-              <span className="text-[#D6A900]">
-                the Future
-              </span>
+              Dominate <span className="text-[#D6A900]">the Future</span>
             </h2>
 
             <p className="text-[#666666] max-w-xl mt-4 text-[15px] leading-relaxed">
@@ -54,40 +58,30 @@ export default function DominateFuture() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          
-          <GalleryCard
-            img="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1000&q=80"
-            tall
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {galleryProjects.map((project, index) => {
+            const wideCard =
+              index === 0 ||
+              index === 5 ||
+              index === 6 ||
+              index === 7;
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <GalleryCard
-              img="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80"
-              tag="Team"
-              className="sm:col-span-2"
-            />
-
-            <GalleryCard
-              img="https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=700&q=80"
-            />
-
-            <GalleryCard
-              img="https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?auto=format&fit=crop&w=700&q=80"
-            />
-          </div>
+            return (
+              <GalleryCard
+                key={`${project.name}-${index}`}
+                img={project.img}
+                name={project.name}
+                className={wideCard ? "lg:col-span-2" : ""}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
-function GalleryCard({
-  img,
-  tag,
-  tall,
-  className = "",
-}) {
+function GalleryCard({ img, name, className = "" }) {
   return (
     <div
       className={`
@@ -95,18 +89,15 @@ function GalleryCard({
         overflow-hidden
         group
         bg-[#DADADA]
-        ${
-          tall
-            ? "min-h-[420px] lg:min-h-full"
-            : "min-h-[260px]"
-        }
+        min-h-[260px]
+        md:min-h-[290px]
         ${className}
       `}
     >
       {/* Image */}
       <img
         src={img}
-        alt=""
+        alt={name || "Project"}
         className="
           absolute
           inset-0
@@ -125,61 +116,25 @@ function GalleryCard({
           absolute
           inset-0
           bg-gradient-to-t
-          from-black/55
+          from-black/60
           via-black/10
           to-transparent
         "
       />
 
-      {/* Heart Button */}
-      <button
-        type="button"
-        className="
-          absolute
-          top-4
-          right-4
+      {/* Project Label */}
+      <div className="absolute bottom-5 left-5 right-5 z-10">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="w-7 h-[3px] bg-[#F6C62E]" />
+          <span className="text-[#F6C62E] text-[11px] uppercase tracking-[0.14em] font-bold">
+            Project
+          </span>
+        </div>
 
-          w-10
-          h-10
-
-          flex
-          items-center
-          justify-center
-
-          bg-white
-          text-[#D6A900]
-
-          hover:bg-[#F6C62E]
-          hover:text-[#202020]
-
-          transition-all
-          duration-300
-        "
-      >
-        <Heart size={17} strokeWidth={2} />
-      </button>
-
-      {/* Tag */}
-      {tag && (
-        <span
-          className="
-            absolute
-            bottom-4
-            left-4
-
-            bg-[#F6C62E]
-            text-[#202020]
-
-            text-[13px]
-            font-bold
-
-            px-4
-            py-2
-          "
-        >
-          {tag}
-        </span>
-      )}
+        <h3 className="text-white font-bold text-[16px] md:text-[18px] leading-snug">
+          {name}
+        </h3>
+      </div>
 
       {/* Yellow Bottom Accent */}
       <div
@@ -187,14 +142,10 @@ function GalleryCard({
           absolute
           bottom-0
           left-0
-
           h-[4px]
           w-0
-
           bg-[#F6C62E]
-
           group-hover:w-full
-
           transition-all
           duration-500
         "
