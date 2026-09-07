@@ -5,7 +5,11 @@ import {
   MapPin,
   Send,
   Building2,
+  Clock3,
 } from "lucide-react";
+
+import PageHero from "../components/PageHero";
+import Reveal from "../components/Reveal";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -18,27 +22,93 @@ export default function Contact() {
   });
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
+    setForm((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log(form);
-
-    // Later your backend/email API can be connected here.
   };
 
   return (
     <>
-      {/* =========================================
+      {/* ========================================
           PAGE HERO
-      ========================================== */}
+      ======================================== */}
+      <PageHero
+        eyebrow="Contact Us"
+        title="Let's Build Something"
+        highlight="Exceptional"
+        subtitle="Connect with our team to discuss your project requirements, engineering challenges and upcoming opportunities."
+        img="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=85"
+      />
 
-      <section className="bg-[#202020]">
+      {/* ========================================
+          INTRO
+      ======================================== */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+          <Reveal>
+            <div className="max-w-[760px] text-left">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-[3px] bg-[#F6C62E]" />
+
+                <span
+                  className="
+                    text-[12px]
+                    md:text-[13px]
+                    uppercase
+                    tracking-[0.16em]
+                    font-bold
+                    text-[#858585]
+                  "
+                >
+                  Start a Conversation
+                </span>
+              </div>
+
+              <h2
+                className="
+                  font-sans
+                  font-extrabold
+                  text-[32px]
+                  md:text-[42px]
+                  leading-[1.1]
+                  text-[#202020]
+                "
+              >
+                Your Next Project Starts{" "}
+                <span className="text-[#D6A900]">
+                  Here
+                </span>
+              </h2>
+
+              <p
+                className="
+                  text-[#666666]
+                  text-[15px]
+                  leading-[1.8]
+                  max-w-[650px]
+                  mt-4
+                "
+              >
+                Tell us what you are planning. Our team will understand
+                your requirements and help identify the right engineering
+                and execution approach.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ========================================
+          CONTACT DETAILS + FORM
+      ======================================== */}
+      <section className="bg-[#F5F5F5] py-20 md:py-28">
         <div
           className="
             max-w-[1440px]
@@ -46,251 +116,219 @@ export default function Contact() {
             px-4
             sm:px-6
             lg:px-12
-            py-20
-            md:py-28
+
+            grid
+            grid-cols-1
+            lg:grid-cols-[0.8fr_1.2fr]
+
+            gap-8
+            lg:gap-10
+
+            items-start
           "
         >
-          <div className="max-w-[760px]">
-            <div className="flex items-center gap-3 mb-5">
-              <span className="w-10 h-[3px] bg-[#F6C62E]" />
-
-              <span
-                className="
-                  text-[#F6C62E]
-                  text-[12px]
-                  md:text-[13px]
-                  uppercase
-                  tracking-[0.16em]
-                  font-bold
-                "
-              >
-                Contact Us
-              </span>
-            </div>
-
-            <h1
-              className="
-                text-white
-                font-extrabold
-                text-[40px]
-                sm:text-[50px]
-                md:text-[62px]
-                leading-[1.02]
-              "
-            >
-              Let's Build Something
-              <br />
-              <span className="text-[#F6C62E]">
-                Exceptional.
-              </span>
-            </h1>
-
-            <p
-              className="
-                text-[#CFCFCF]
-                max-w-[650px]
-                mt-6
-                text-[14px]
-                md:text-[16px]
-                leading-[1.8]
-              "
-            >
-              Have an upcoming project or engineering requirement?
-              Connect with our team and let's discuss how Vardhusa
-              can help bring it to life.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
-          CONTACT SECTION
-      ========================================== */}
-
-      <section className="bg-[#F5F5F5] py-16 md:py-24">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-
-          <div
-            className="
-              grid
-              grid-cols-1
-              lg:grid-cols-[0.85fr_1.4fr]
-              gap-8
-              lg:gap-12
-              items-start
-            "
-          >
-            {/* =========================================
-                LEFT SIDE
-            ========================================== */}
-
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-10 h-[3px] bg-[#F6C62E]" />
-
-                <span
-                  className="
-                    text-[12px]
-                    uppercase
-                    tracking-[0.16em]
-                    font-bold
-                    text-[#858585]
-                  "
-                >
-                  Get in Touch
-                </span>
-              </div>
-
-              <h2
-                className="
-                  font-extrabold
-                  text-[#202020]
-                  text-[30px]
-                  md:text-[40px]
-                  leading-[1.1]
-                "
-              >
-                Start Your Next
-                <br />
-                <span className="text-[#D6A900]">
-                  Project With Us
-                </span>
-              </h2>
-
-              <p
-                className="
-                  text-[#666666]
-                  text-[14px]
-                  md:text-[15px]
-                  leading-[1.8]
-                  mt-5
-                  max-w-[500px]
-                "
-              >
-                Whether you need plumbing, firefighting, MEP or
-                complete EPC support, our team is ready to understand
-                your requirements.
-              </p>
-
-              {/* Contact Cards */}
-              <div className="mt-9 flex flex-col gap-4">
-
-                <ContactCard
-                  icon={Phone}
-                  title="Call Us"
-                  value="+91 00000 00000"
-                />
-
-                <ContactCard
-                  icon={Mail}
-                  title="Email Us"
-                  value="info@vardhusa.com"
-                />
-
-                <ContactCard
-                  icon={MapPin}
-                  title="Our Office"
-                  value="India"
-                />
-              </div>
-
-              {/* Extra Info */}
+          {/* LEFT SIDE */}
+          <div>
+            <Reveal>
               <div
                 className="
-                  mt-6
                   bg-[#202020]
-                  p-6
-                  md:p-7
-                  relative
-                  overflow-hidden
+                  p-7
+                  sm:p-9
+                  lg:p-10
                 "
               >
-                <div
-                  className="
-                    absolute
-                    top-0
-                    left-0
-                    w-[5px]
-                    h-full
-                    bg-[#F6C62E]
-                  "
-                />
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-10 h-[3px] bg-[#F6C62E]" />
 
-                <div className="flex items-start gap-4">
-                  <Building2
-                    size={28}
-                    className="text-[#F6C62E] shrink-0 mt-1"
+                  <span
+                    className="
+                      text-[#F6C62E]
+                      text-[12px]
+                      uppercase
+                      tracking-[0.16em]
+                      font-bold
+                    "
+                  >
+                    Reach Vardhusa
+                  </span>
+                </div>
+
+                <h2
+                  className="
+                    text-white
+                    font-extrabold
+                    text-[30px]
+                    md:text-[38px]
+                    leading-[1.1]
+                  "
+                >
+                  Let's Discuss Your{" "}
+                  <span className="text-[#F6C62E]">
+                    Requirements
+                  </span>
+                </h2>
+
+                <p
+                  className="
+                    text-[#BEBEBE]
+                    text-[14px]
+                    leading-[1.8]
+                    mt-5
+                  "
+                >
+                  Whether it is a new project, expansion, MEP package or
+                  integrated EPC requirement, our team is ready to connect.
+                </p>
+
+                <div className="mt-9 space-y-px bg-white/10">
+                  <ContactRow
+                    icon={Phone}
+                    label="Call Us"
+                    value="+91 00000 00000"
                   />
 
-                  <div>
-                    <h3
-                      className="
-                        text-white
-                        font-bold
-                        text-[17px]
-                      "
-                    >
-                      End-to-End EPC Support
-                    </h3>
+                  <ContactRow
+                    icon={Mail}
+                    label="Email Us"
+                    value="info@vardhusa.com"
+                  />
 
-                    <p
-                      className="
-                        text-[#AAAAAA]
-                        text-[13.5px]
-                        leading-[1.7]
-                        mt-2
-                      "
-                    >
-                      From engineering and planning through execution
-                      and final handover, we work as one integrated
-                      project partner.
-                    </p>
-                  </div>
+                  <ContactRow
+                    icon={MapPin}
+                    label="Office"
+                    value="India"
+                  />
+
+                  <ContactRow
+                    icon={Clock3}
+                    label="Working Hours"
+                    value="Monday - Saturday"
+                  />
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            {/* =========================================
-                CONTACT FORM
-            ========================================== */}
+            {/* SUPPORT BLOCK */}
+            <Reveal delay={0.1}>
+              <div
+                className="
+                  bg-[#F6C62E]
+                  p-7
+                  md:p-8
 
+                  flex
+                  items-start
+                  gap-4
+                "
+              >
+                <Building2
+                  size={31}
+                  strokeWidth={1.8}
+                  className="text-[#202020] shrink-0"
+                />
+
+                <div>
+                  <span
+                    className="
+                      text-[#202020]/60
+                      text-[11px]
+                      uppercase
+                      tracking-[0.15em]
+                      font-bold
+                    "
+                  >
+                    Integrated EPC Support
+                  </span>
+
+                  <h3
+                    className="
+                      text-[#202020]
+                      font-extrabold
+                      text-[19px]
+                      mt-2
+                    "
+                  >
+                    One team from planning to handover.
+                  </h3>
+
+                  <p
+                    className="
+                      text-[#333333]
+                      text-[13.5px]
+                      leading-[1.7]
+                      mt-2
+                    "
+                  >
+                    Coordinated engineering, execution and project support
+                    through a single accountable partner.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* ========================================
+              CONTACT FORM
+          ======================================== */}
+          <Reveal delay={0.08}>
             <div
               className="
                 bg-white
                 border
-                border-[#E1E1E1]
+                border-[#E2E2E2]
+
                 p-6
                 sm:p-8
                 md:p-10
-                shadow-[0_18px_45px_rgba(0,0,0,0.06)]
               "
             >
-              <div className="mb-8">
+              <div className="mb-9">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-9 h-[3px] bg-[#F6C62E]" />
+
+                  <span
+                    className="
+                      text-[#858585]
+                      text-[11px]
+                      md:text-[12px]
+                      uppercase
+                      tracking-[0.15em]
+                      font-bold
+                    "
+                  >
+                    Project Enquiry
+                  </span>
+                </div>
+
                 <h3
                   className="
                     text-[#202020]
                     font-extrabold
-                    text-[24px]
-                    md:text-[28px]
+                    text-[26px]
+                    md:text-[32px]
+                    leading-[1.15]
                   "
                 >
-                  Tell Us About Your Project
+                  Tell Us About Your{" "}
+                  <span className="text-[#D6A900]">
+                    Project
+                  </span>
                 </h3>
 
                 <p
                   className="
                     text-[#777777]
                     text-[14px]
-                    mt-2
+                    leading-relaxed
+                    mt-3
                   "
                 >
-                  Fill in the details below and our team will get
-                  in touch with you.
+                  Share a few details and our team will connect with you.
                 </p>
               </div>
 
               <form onSubmit={handleSubmit}>
-
                 <div
                   className="
                     grid
@@ -304,7 +342,7 @@ export default function Contact() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="Enter your name"
+                    placeholder="Your name"
                     required
                   />
 
@@ -314,7 +352,7 @@ export default function Contact() {
                     type="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="Enter your email"
+                    placeholder="Your email"
                     required
                   />
 
@@ -335,7 +373,7 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Project Type */}
+                {/* Requirement */}
                 <div className="mt-5">
                   <label
                     className="
@@ -355,40 +393,59 @@ export default function Contact() {
                     onChange={handleChange}
                     className="
                       w-full
-                      h-[52px]
+                      h-[54px]
                       px-4
+
                       bg-[#F7F7F7]
                       border
                       border-[#DDDDDD]
+
                       outline-none
+
                       text-[#555555]
                       text-[14px]
+
+                      focus:bg-white
                       focus:border-[#F6C62E]
-                      transition-colors
+
+                      transition-all
+                      duration-300
                     "
                   >
                     <option value="">
-                      Select project type
+                      Select project requirement
+                    </option>
+
+                    <option value="Turnkey">
+                      Turnkey Solution
+                    </option>
+
+                    <option value="Fire Fighting">
+                      Fire Detection & Protection
                     </option>
 
                     <option value="Plumbing">
-                      Plumbing
+                      Plumbing & Sanitation
                     </option>
 
-                    <option value="Firefighting">
-                      Firefighting
+                    <option value="HVAC">
+                      HVAC System
                     </option>
 
-                    <option value="MEP">
-                      MEP Services
+                    <option value="Electrical">
+                      Electrical System
                     </option>
 
-                    <option value="EPC">
-                      Complete EPC Solution
+                    <option value="BMS">
+                      BMS
                     </option>
 
-                    <option value="Other">
-                      Other Requirement
+                    <option value="Design">
+                      Design & Engineering
+                    </option>
+
+                    <option value="Facility">
+                      Facility Management
                     </option>
                   </select>
                 </div>
@@ -404,7 +461,7 @@ export default function Contact() {
                       mb-2
                     "
                   >
-                    Your Message
+                    Project Details
                   </label>
 
                   <textarea
@@ -412,119 +469,161 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     rows={6}
-                    placeholder="Tell us briefly about your project..."
+                    placeholder="Briefly describe your project requirement..."
                     className="
                       w-full
+
                       px-4
                       py-4
+
                       bg-[#F7F7F7]
+
                       border
                       border-[#DDDDDD]
+
                       outline-none
                       resize-none
+
                       text-[#444444]
+                      placeholder:text-[#AAAAAA]
                       text-[14px]
+
+                      focus:bg-white
                       focus:border-[#F6C62E]
-                      transition-colors
+
+                      transition-all
+                      duration-300
                     "
                   />
                 </div>
 
-                {/* Submit */}
                 <button
                   type="submit"
                   className="
+                    group
+
                     mt-6
-                    min-h-[52px]
+
                     flex
                     items-center
-                    justify-center
-                    gap-2
+                    gap-3
+
                     bg-[#F6C62E]
                     text-[#202020]
-                    px-8
+
+                    pl-7
+                    pr-2
+                    py-2
+
                     text-[14px]
                     font-extrabold
+
                     hover:bg-[#202020]
                     hover:text-white
+
                     transition-all
                     duration-300
                   "
                 >
                   Send Enquiry
 
-                  <Send
-                    size={16}
-                    strokeWidth={2.2}
-                  />
+                  <span
+                    className="
+                      w-10
+                      h-10
+
+                      flex
+                      items-center
+                      justify-center
+
+                      bg-white/70
+                      text-[#202020]
+
+                      group-hover:bg-[#F6C62E]
+
+                      transition-all
+                      duration-300
+                    "
+                  >
+                    <Send
+                      size={16}
+                      strokeWidth={2}
+                      className="
+                        transition-transform
+                        duration-300
+                        group-hover:translate-x-0.5
+                      "
+                    />
+                  </span>
                 </button>
               </form>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>
   );
 }
 
-/* =========================================
-   CONTACT CARD
-========================================== */
+/* ========================================
+   CONTACT ROW
+======================================== */
 
-function ContactCard({ icon: Icon, title, value }) {
+function ContactRow({ icon: Icon, label, value }) {
   return (
     <div
       className="
-        group
         flex
         items-center
         gap-4
-        bg-white
-        border
-        border-[#E1E1E1]
+
+        bg-[#292929]
+
         p-5
-        hover:border-[#F6C62E]
-        transition-all
+
+        transition-colors
         duration-300
+
+        hover:bg-[#303030]
       "
     >
       <div
         className="
-          w-12
-          h-12
+          w-11
+          h-11
+
           flex
           items-center
           justify-center
-          bg-[#FFF8DA]
-          text-[#D6A900]
-          group-hover:bg-[#F6C62E]
-          group-hover:text-[#202020]
-          transition-all
-          duration-300
+
+          bg-[#F6C62E]
+
+          text-[#202020]
+
           shrink-0
         "
       >
-        <Icon size={20} />
+        <Icon size={19} strokeWidth={1.9} />
       </div>
 
       <div>
         <p
           className="
-            text-[#888888]
-            text-[11px]
+            text-[#999999]
+            text-[10.5px]
             uppercase
-            tracking-[0.1em]
+            tracking-[0.13em]
             font-bold
           "
         >
-          {title}
+          {label}
         </p>
 
         <p
           className="
-            text-[#202020]
-            font-bold
+            text-white
             text-[14px]
+            font-semibold
             mt-1
           "
         >
@@ -535,9 +634,9 @@ function ContactCard({ icon: Icon, title, value }) {
   );
 }
 
-/* =========================================
+/* ========================================
    FORM INPUT
-========================================== */
+======================================== */
 
 function FormInput({
   label,
@@ -546,7 +645,7 @@ function FormInput({
   value,
   onChange,
   placeholder,
-  required,
+  required = false,
 }) {
   return (
     <div>
@@ -571,17 +670,25 @@ function FormInput({
         required={required}
         className="
           w-full
-          h-[52px]
+          h-[54px]
+
           px-4
+
           bg-[#F7F7F7]
+
           border
           border-[#DDDDDD]
+
           outline-none
+
           text-[#444444]
           placeholder:text-[#AAAAAA]
+
           text-[14px]
-          focus:border-[#F6C62E]
+
           focus:bg-white
+          focus:border-[#F6C62E]
+
           transition-all
           duration-300
         "
