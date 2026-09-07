@@ -1,4 +1,6 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 import {
   Mail,
   Phone,
@@ -6,6 +8,9 @@ import {
   Send,
   Building2,
   Clock3,
+  CheckCircle2,
+  AlertCircle,
+  Loader2,
 } from "lucide-react";
 
 import PageHero from "../components/PageHero";
@@ -21,17 +26,56 @@ export default function Contact() {
     message: "",
   });
 
+  const [status, setStatus] = useState("idle");
+  const [statusMessage, setStatusMessage] = useState("");
+
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
     setForm((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(form);
+    setStatus("loading");
+    setStatusMessage("");
+
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send enquiry.");
+      }
+
+      setStatus("success");
+      setStatusMessage("Your enquiry has been sent successfully.");
+
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        projectType: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+
+      setStatus("error");
+      setStatusMessage("Unable to send enquiry. Please try again.");
+    }
   };
 
   return (
@@ -39,6 +83,7 @@ export default function Contact() {
       {/* ========================================
           PAGE HERO
       ======================================== */}
+
       <PageHero
         eyebrow="Contact Us"
         title="Let's Build Something"
@@ -50,6 +95,7 @@ export default function Contact() {
       {/* ========================================
           INTRO
       ======================================== */}
+
       <section className="bg-white py-20 md:py-24">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
@@ -108,11 +154,13 @@ export default function Contact() {
       {/* ========================================
           CONTACT DETAILS + FORM
       ======================================== */}
+
       <section className="bg-[#F5F5F5] py-20 md:py-28">
         <div
           className="
             max-w-[1440px]
             mx-auto
+
             px-4
             sm:px-6
             lg:px-12
@@ -128,11 +176,13 @@ export default function Contact() {
           "
         >
           {/* LEFT SIDE */}
+
           <div>
             <Reveal>
               <div
                 className="
                   bg-[#202020]
+
                   p-7
                   sm:p-9
                   lg:p-10
@@ -158,8 +208,10 @@ export default function Contact() {
                   className="
                     text-white
                     font-extrabold
+
                     text-[30px]
                     md:text-[38px]
+
                     leading-[1.1]
                   "
                 >
@@ -183,15 +235,15 @@ export default function Contact() {
 
                 <div className="mt-9 space-y-px bg-white/10">
                   <ContactRow
-                    icon={Phone}
-                    label="Call Us"
-                    value="+91 00000 00000"
-                  />
-
-                  <ContactRow
                     icon={Mail}
                     label="Email Us"
                     value="info@vardhusa.com"
+                  />
+
+                  <ContactRow
+                    icon={Phone}
+                    label="Call Us"
+                    value="+91 00000 00000"
                   />
 
                   <ContactRow
@@ -209,11 +261,11 @@ export default function Contact() {
               </div>
             </Reveal>
 
-            {/* SUPPORT BLOCK */}
             <Reveal delay={0.1}>
               <div
                 className="
                   bg-[#F6C62E]
+
                   p-7
                   md:p-8
 
@@ -269,8 +321,9 @@ export default function Contact() {
           </div>
 
           {/* ========================================
-              CONTACT FORM
+              FORM
           ======================================== */}
+
           <Reveal delay={0.08}>
             <div
               className="
@@ -305,8 +358,10 @@ export default function Contact() {
                   className="
                     text-[#202020]
                     font-extrabold
+
                     text-[26px]
                     md:text-[32px]
+
                     leading-[1.15]
                   "
                 >
@@ -315,18 +370,57 @@ export default function Contact() {
                     Project
                   </span>
                 </h3>
+              </div>
 
-                <p
+              {/* Status Message */}
+
+              {status === "success" && (
+                <div
                   className="
-                    text-[#777777]
-                    text-[14px]
-                    leading-relaxed
-                    mt-3
+                    mb-6
+                    p-4
+                    bg-[#F3FFF5]
+                    border
+                    border-[#B9E9C0]
+                    flex
+                    items-start
+                    gap-3
                   "
                 >
-                  Share a few details and our team will connect with you.
-                </p>
-              </div>
+                  <CheckCircle2
+                    size={20}
+                    className="text-green-600 shrink-0 mt-0.5"
+                  />
+
+                  <p className="text-[#355D3A] text-[14px] font-medium">
+                    {statusMessage}
+                  </p>
+                </div>
+              )}
+
+              {status === "error" && (
+                <div
+                  className="
+                    mb-6
+                    p-4
+                    bg-[#FFF5F5]
+                    border
+                    border-[#F0C4C4]
+                    flex
+                    items-start
+                    gap-3
+                  "
+                >
+                  <AlertCircle
+                    size={20}
+                    className="text-red-600 shrink-0 mt-0.5"
+                  />
+
+                  <p className="text-[#7B3636] text-[14px] font-medium">
+                    {statusMessage}
+                  </p>
+                </div>
+              )}
 
               <form onSubmit={handleSubmit}>
                 <div
@@ -373,17 +467,10 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Requirement */}
+                {/* Project Type */}
+
                 <div className="mt-5">
-                  <label
-                    className="
-                      block
-                      text-[#333333]
-                      text-[13px]
-                      font-bold
-                      mb-2
-                    "
-                  >
+                  <label className="block text-[#333333] text-[13px] font-bold mb-2">
                     Project Requirement
                   </label>
 
@@ -397,6 +484,7 @@ export default function Contact() {
                       px-4
 
                       bg-[#F7F7F7]
+
                       border
                       border-[#DDDDDD]
 
@@ -416,23 +504,23 @@ export default function Contact() {
                       Select project requirement
                     </option>
 
-                    <option value="Turnkey">
+                    <option value="Turnkey Solution">
                       Turnkey Solution
                     </option>
 
-                    <option value="Fire Fighting">
+                    <option value="Fire Detection & Protection">
                       Fire Detection & Protection
                     </option>
 
-                    <option value="Plumbing">
+                    <option value="Plumbing & Sanitation">
                       Plumbing & Sanitation
                     </option>
 
-                    <option value="HVAC">
+                    <option value="HVAC System">
                       HVAC System
                     </option>
 
-                    <option value="Electrical">
+                    <option value="Electrical System">
                       Electrical System
                     </option>
 
@@ -440,27 +528,20 @@ export default function Contact() {
                       BMS
                     </option>
 
-                    <option value="Design">
+                    <option value="Design & Engineering">
                       Design & Engineering
                     </option>
 
-                    <option value="Facility">
+                    <option value="Facility Management">
                       Facility Management
                     </option>
                   </select>
                 </div>
 
                 {/* Message */}
+
                 <div className="mt-5">
-                  <label
-                    className="
-                      block
-                      text-[#333333]
-                      text-[13px]
-                      font-bold
-                      mb-2
-                    "
-                  >
+                  <label className="block text-[#333333] text-[13px] font-bold mb-2">
                     Project Details
                   </label>
 
@@ -486,6 +567,7 @@ export default function Contact() {
 
                       text-[#444444]
                       placeholder:text-[#AAAAAA]
+
                       text-[14px]
 
                       focus:bg-white
@@ -497,8 +579,11 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Submit */}
+
                 <button
                   type="submit"
+                  disabled={status === "loading"}
                   className="
                     group
 
@@ -521,40 +606,62 @@ export default function Contact() {
                     hover:bg-[#202020]
                     hover:text-white
 
+                    disabled:opacity-60
+                    disabled:cursor-not-allowed
+
                     transition-all
                     duration-300
                   "
                 >
-                  Send Enquiry
+                  {status === "loading" ? (
+                    <>
+                      Sending...
 
-                  <span
-                    className="
-                      w-10
-                      h-10
+                      <span
+                        className="
+                          w-10
+                          h-10
 
-                      flex
-                      items-center
-                      justify-center
+                          flex
+                          items-center
+                          justify-center
 
-                      bg-white/70
-                      text-[#202020]
+                          bg-white/70
+                          text-[#202020]
+                        "
+                      >
+                        <Loader2
+                          size={17}
+                          className="animate-spin"
+                        />
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      Send Enquiry
 
-                      group-hover:bg-[#F6C62E]
+                      <span
+                        className="
+                          w-10
+                          h-10
 
-                      transition-all
-                      duration-300
-                    "
-                  >
-                    <Send
-                      size={16}
-                      strokeWidth={2}
-                      className="
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-0.5
-                      "
-                    />
-                  </span>
+                          flex
+                          items-center
+                          justify-center
+
+                          bg-white/70
+                          text-[#202020]
+
+                          group-hover:bg-[#F6C62E]
+
+                          transition-all
+                          duration-300
+                        "
+                      >
+                        <Send size={16} strokeWidth={2} />
+                      </span>
+                    </>
+                  )}
                 </button>
               </form>
             </div>
@@ -564,10 +671,6 @@ export default function Contact() {
     </>
   );
 }
-
-/* ========================================
-   CONTACT ROW
-======================================== */
 
 function ContactRow({ icon: Icon, label, value }) {
   return (
@@ -581,10 +684,10 @@ function ContactRow({ icon: Icon, label, value }) {
 
         p-5
 
+        hover:bg-[#303030]
+
         transition-colors
         duration-300
-
-        hover:bg-[#303030]
       "
     >
       <div
@@ -597,7 +700,6 @@ function ContactRow({ icon: Icon, label, value }) {
           justify-center
 
           bg-[#F6C62E]
-
           text-[#202020]
 
           shrink-0
@@ -633,10 +735,6 @@ function ContactRow({ icon: Icon, label, value }) {
     </div>
   );
 }
-
-/* ========================================
-   FORM INPUT
-======================================== */
 
 function FormInput({
   label,
