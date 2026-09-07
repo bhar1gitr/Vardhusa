@@ -10,6 +10,7 @@ const LINKS = [
   { label: "Projects", to: "/projects" },
   { label: "Careers", to: "/careers" },
   { label: "CSR", to: "/csr" },
+  { label: "Gallery", to: "/gallery", icon: true },
 ];
 
 export default function Navbar() {
@@ -41,19 +42,35 @@ export default function Navbar() {
           : "border-b border-[#E9E9E9]"
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-[82px] flex items-center justify-between">
-
+      <div
+        className="
+          max-w-[1440px]
+          mx-auto
+          px-6
+          lg:px-12
+          h-[88px]
+          flex
+          items-center
+          justify-between
+        "
+      >
         {/* LOGO */}
         <Link to="/" className="flex items-center shrink-0">
           <img
             src={logo}
             alt="Vardhusa Logo"
-            className="h-[32px] md:h-[36px] w-auto object-contain"
+            className="
+              h-[46px]
+              md:h-[54px]
+              lg:h-[60px]
+              w-auto
+              object-contain
+            "
           />
         </Link>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden lg:flex items-center gap-2">
+        <nav className="hidden lg:flex items-center gap-1">
           {LINKS.map((link) => {
             const active = isActive(link.to);
 
@@ -61,39 +78,78 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 to={link.to}
-                className={`relative px-4 xl:px-5 py-3 text-[14px] font-semibold transition-colors duration-300 ${
-                  active
-                    ? "text-[#202020]"
-                    : "text-[#626262] hover:text-[#202020]"
-                }`}
+                className={`
+                  relative
+                  flex
+                  items-center
+                  gap-1.5
+                  px-3
+                  xl:px-4
+                  py-3
+                  text-[14px]
+                  font-semibold
+                  transition-colors
+                  duration-300
+
+                  ${
+                    active
+                      ? "text-[#202020]"
+                      : "text-[#626262] hover:text-[#202020]"
+                  }
+                `}
               >
+                {link.icon && (
+                  <PlayCircle
+                    size={17}
+                    strokeWidth={2}
+                    className="text-[#DCAA00]"
+                  />
+                )}
+
                 {link.label}
 
                 {active && (
-                  <span className="absolute bottom-[2px] left-1/2 -translate-x-1/2 w-[26px] h-[3px] bg-[#F6C62E]" />
+                  <span
+                    className="
+                      absolute
+                      bottom-[2px]
+                      left-1/2
+                      -translate-x-1/2
+                      w-[26px]
+                      h-[3px]
+                      bg-[#F6C62E]
+                    "
+                  />
                 )}
               </Link>
             );
           })}
         </nav>
 
-        {/* ACTIONS */}
-        <div className="hidden md:flex items-center gap-3">
-          <button
-            type="button"
-            className="flex items-center gap-2 px-5 py-2.5 text-[14px] font-semibold text-[#444] border border-[#D8D8D8] hover:border-[#F6C62E] hover:bg-[#FFFBEF] transition-all duration-300"
-          >
-            <PlayCircle
-              size={18}
-              strokeWidth={2}
-              className="text-[#DCAA00]"
-            />
-            Gallery
-          </button>
-
+        {/* CONTACT BUTTON */}
+        <div className="hidden lg:flex items-center">
           <Link
             to="/contact"
-            className="bg-[#F6C62E] text-[#202020] border border-[#F6C62E] px-7 py-2.5 text-[14px] font-bold hover:bg-[#202020] hover:border-[#202020] hover:text-white transition-all duration-300"
+            className="
+              bg-[#F6C62E]
+              text-[#202020]
+
+              border
+              border-[#F6C62E]
+
+              px-7
+              py-2.5
+
+              text-[14px]
+              font-bold
+
+              hover:bg-[#202020]
+              hover:border-[#202020]
+              hover:text-white
+
+              transition-all
+              duration-300
+            "
           >
             Contact
           </Link>
@@ -104,7 +160,15 @@ export default function Navbar() {
           type="button"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
-          className="lg:hidden flex items-center justify-center w-10 h-10 text-[#202020]"
+          className="
+            lg:hidden
+            flex
+            items-center
+            justify-center
+            w-10
+            h-10
+            text-[#202020]
+          "
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -112,8 +176,21 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-[#EAEAEA] shadow-[0_12px_30px_rgba(0,0,0,0.08)] px-6 py-5">
-
+        <div
+          className="
+            lg:hidden
+            absolute
+            top-full
+            left-0
+            w-full
+            bg-white
+            border-t
+            border-[#EAEAEA]
+            shadow-[0_12px_30px_rgba(0,0,0,0.08)]
+            px-6
+            py-5
+          "
+        >
           <div className="flex flex-col">
             {LINKS.map((link) => {
               const active = isActive(link.to);
@@ -123,14 +200,44 @@ export default function Navbar() {
                   key={link.label}
                   to={link.to}
                   onClick={() => setOpen(false)}
-                  className={`relative px-4 py-3.5 text-[15px] font-semibold border-b border-[#EEEEEE] ${
-                    active
-                      ? "text-[#202020] bg-[#FFFBEF]"
-                      : "text-[#666666] hover:text-[#202020]"
-                  }`}
+                  className={`
+                    relative
+                    flex
+                    items-center
+                    gap-2
+                    px-4
+                    py-3.5
+                    text-[15px]
+                    font-semibold
+                    border-b
+                    border-[#EEEEEE]
+
+                    ${
+                      active
+                        ? "text-[#202020] bg-[#FFFBEF]"
+                        : "text-[#666666] hover:text-[#202020]"
+                    }
+                  `}
                 >
                   {active && (
-                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-6 bg-[#F6C62E]" />
+                    <span
+                      className="
+                        absolute
+                        left-0
+                        top-1/2
+                        -translate-y-1/2
+                        w-[3px]
+                        h-6
+                        bg-[#F6C62E]
+                      "
+                    />
+                  )}
+
+                  {link.icon && (
+                    <PlayCircle
+                      size={18}
+                      className="text-[#DCAA00]"
+                    />
                   )}
 
                   {link.label}
@@ -139,19 +246,21 @@ export default function Navbar() {
             })}
           </div>
 
-          <div className="flex flex-col gap-3 mt-5">
-            <button
-              type="button"
-              className="w-full flex items-center justify-center gap-2 border border-[#D8D8D8] text-[#333] px-5 py-3 text-[14px] font-semibold"
-            >
-              <PlayCircle size={18} className="text-[#DCAA00]" />
-              Gallery
-            </button>
-
+          <div className="mt-5">
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="w-full text-center bg-[#F6C62E] text-[#202020] px-6 py-3 text-[14px] font-bold"
+              className="
+                block
+                w-full
+                text-center
+                bg-[#F6C62E]
+                text-[#202020]
+                px-6
+                py-3
+                text-[14px]
+                font-bold
+              "
             >
               Contact
             </Link>
