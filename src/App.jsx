@@ -13,6 +13,12 @@ import CSR from "./pages/CSR";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 
+// Policy Pages Imports
+import Disclaimer from "./pages/Disclaimer";
+import QualityPolicy from "./pages/QualityPolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import HsePolicies from "./pages/HsePolicies";
+
 function PageTransition({ children }) {
   return (
     <motion.div
@@ -33,84 +39,123 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <div className="bg-white min-h-screen">
-      <Navbar />
+    <div className="bg-white min-h-screen flex flex-col justify-between">
+      <div>
+        <Navbar />
 
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route
-            path="/"
-            element={
-              <PageTransition>
-                <Home />
-              </PageTransition>
-            }
-          />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route
+              path="/"
+              element={
+                <PageTransition>
+                  <Home />
+                </PageTransition>
+              }
+            />
 
-          <Route
-            path="/about"
-            element={
-              <PageTransition>
-                <About />
-              </PageTransition>
-            }
-          />
+            <Route
+              path="/about"
+              element={
+                <PageTransition>
+                  <About />
+                </PageTransition>
+              }
+            />
 
-          <Route
-            path="/businesses"
-            element={
-              <PageTransition>
-                <Businesses />
-              </PageTransition>
-            }
-          />
+            <Route
+              path="/businesses"
+              element={
+                <PageTransition>
+                  <Businesses />
+                </PageTransition>
+              }
+            />
 
-          <Route
-            path="/projects"
-            element={
-              <PageTransition>
-                <Projects />
-              </PageTransition>
-            }
-          />
+            <Route
+              path="/projects"
+              element={
+                <PageTransition>
+                  <Projects />
+                </PageTransition>
+              }
+            />
 
-          <Route
-            path="/careers"
-            element={
-              <PageTransition>
-                <Careers />
-              </PageTransition>
-            }
-          />
+            <Route
+              path="/careers"
+              element={
+                <PageTransition>
+                  <Careers />
+                </PageTransition>
+              }
+            />
 
-          <Route
-            path="/csr"
-            element={
-              <PageTransition>
-                <CSR />
-              </PageTransition>
-            }
-          />
+            <Route
+              path="/csr"
+              element={
+                <PageTransition>
+                  <CSR />
+                </PageTransition>
+              }
+            />
 
-          <Route
-            path="/gallery"
-            element={
-              <PageTransition>
-                <Gallery />
-              </PageTransition>
-            }
-          />
+            <Route
+              path="/gallery"
+              element={
+                <PageTransition>
+                  <Gallery />
+                </PageTransition>
+              }
+            />
 
-          <Route
-            path="/contact"
-            element={
-              <PageTransition>
-                <Contact />
-              </PageTransition>
-            }
-          />
-        </Routes>
-      </AnimatePresence>
+            <Route
+              path="/contact"
+              element={
+                <PageTransition>
+                  <Contact />
+                </PageTransition>
+              }
+            />
+
+            {/* Policy Pages Routes */}
+            <Route
+              path="/disclaimer"
+              element={
+                <PageTransition>
+                  <Disclaimer />
+                </PageTransition>
+              }
+            />
+
+            <Route
+              path="/quality-policy"
+              element={
+                <PageTransition>
+                  <QualityPolicy />
+                </PageTransition>
+              }
+            />
+
+            <Route
+              path="/privacy-policy"
+              element={
+                <PageTransition>
+                  <PrivacyPolicy />
+                </PageTransition>
+              }
+            />
+
+            <Route
+              path="/hse-policies"
+              element={
+                <PageTransition>
+                  <HsePolicies />
+                </PageTransition>
+              }
+            />
+          </Routes>
+        </AnimatePresence>
+      </div>
 
       <Footer />
     </div>
