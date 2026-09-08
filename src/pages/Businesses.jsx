@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 import PageHero from "../components/PageHero";
@@ -14,23 +15,29 @@ import BmsLogo from "../assets/business/Bms.jpg";
 import DesignLogo from "../assets/business/Design.jpg";
 import FacilityLogo from "../assets/business/Facility.jpg";
 
-// Client Images
-import imgShapoorji from "../assets/clients/ShapoorjiPallonji.png";
-import imgExperion from "../assets/clients/Experion-Developer.png";
-import imgConscient from "../assets/clients/Conscient-Logo.jpg";
-import imgSchott from "../assets/clients/Schott-Kaisha.jpg";
-import imgDhoot from "../assets/clients/Dhoot.png";
-import imgAmanora from "../assets/clients/Amanora.png";
-import imgCourtyard from "../assets/clients/courtyard.jpg";
-import imgRadisson from "../assets/clients/radisson.png";
-import imgGrand from "../assets/clients/Grand.png";
-import imgClub from "../assets/clients/club.jpg";
-import imgAditya from "../assets/clients/Aditya-Birla-Group.jpg";
+// Client Images (All Included)
 import imgAashima from "../assets/clients/aashima-mall.jpg";
-
-/* =========================================================
-   SERVICES
-========================================================= */
+import imgAditya from "../assets/clients/Aditya-Birla-Group.jpg";
+import imgAirports from "../assets/clients/airports.jpeg";
+import imgAmanora from "../assets/clients/Amanora.png";
+import imgBirla from "../assets/clients/birla.jpeg";
+import imgBounce from "../assets/clients/bounce.jpeg";
+import imgClub from "../assets/clients/club.jpg";
+import imgConscient from "../assets/clients/Conscient-Logo.jpg";
+import imgCourtyard from "../assets/clients/courtyard.jpg";
+import imgDhoot from "../assets/clients/Dhoot.png";
+import imgExperion from "../assets/clients/Experion-Developer.png";
+import imgGodrej from "../assets/clients/godrej.jpeg";
+import imgGrand from "../assets/clients/Grand.png";
+import imgKeystone from "../assets/clients/keystone.jpeg";
+import imgKraheja from "../assets/clients/kraheja.jpeg";
+import imgM3m from "../assets/clients/m3m.jpeg";
+import imgRadisson from "../assets/clients/radisson.png";
+import imgSchott from "../assets/clients/Schott-Kaisha.jpg";
+import imgShapoorji from "../assets/clients/ShapoorjiPallonji.png";
+import imgSignatureGlobal from "../assets/clients/signature-global.jpeg";
+import imgTata from "../assets/clients/tata.jpeg";
+import imgTcs from "../assets/clients/tcs.jpeg";
 
 const SERVICES = [
   {
@@ -75,10 +82,6 @@ const SERVICES = [
   },
 ];
 
-/* =========================================================
-   SECTORS WITH STOCK IMAGES
-========================================================= */
-
 const SECTORS = [
   {
     name: "Commercial & Corporate",
@@ -119,32 +122,36 @@ const SECTORS = [
   },
 ];
 
-/* =========================================================
-   CLIENTS
-========================================================= */
-
 const CLIENTS = [
-  imgShapoorji,
-  imgExperion,
-  imgConscient,
-  imgSchott,
-  imgDhoot,
-  imgAmanora,
-  imgCourtyard,
-  imgRadisson,
-  imgGrand,
-  imgClub,
-  imgAditya,
   imgAashima,
+  imgAditya,
+  imgAirports,
+  imgAmanora,
+  imgBirla,
+  imgBounce,
+  imgClub,
+  imgConscient,
+  imgCourtyard,
+  imgDhoot,
+  imgExperion,
+  imgGodrej,
+  imgGrand,
+  imgKeystone,
+  imgKraheja,
+  imgM3m,
+  imgRadisson,
+  imgSchott,
+  imgShapoorji,
+  imgSignatureGlobal,
+  imgTata,
+  imgTcs,
 ];
 
 export default function Businesses() {
+  const navigate = useNavigate();
+
   return (
     <>
-      {/* =========================================================
-          PAGE HERO
-      ========================================================== */}
-
       <PageHero
         eyebrow="Our Solutions"
         title="Comprehensive EPC Services,"
@@ -153,189 +160,47 @@ export default function Businesses() {
         img="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80"
       />
 
-      {/* =========================================================
-          OUR EXPERTISE
-      ========================================================== */}
-
+      {/* ================= SERVICES ================= */}
       <section className="bg-white py-20 md:py-28">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-          {/* Heading */}
-
           <Reveal>
             <div className="text-left mb-14">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-10 h-[3px] bg-[#F6C62E]" />
-
-                <span
-                  className="
-                    text-[12px]
-                    md:text-[13px]
-                    uppercase
-                    tracking-[0.16em]
-                    font-bold
-                    text-[#858585]
-                  "
-                >
+                <span className="text-[12px] md:text-[13px] uppercase tracking-[0.16em] font-bold text-[#858585]">
                   What We Do
                 </span>
               </div>
-
-              <h2
-                className="
-                  font-sans
-                  font-extrabold
-                  text-[30px]
-                  md:text-[42px]
-                  leading-[1.1]
-                  text-[#202020]
-                  max-w-xl
-                "
-              >
-                Our{" "}
-                <span className="text-[#D6A900]">
-                  Expertise
-                </span>
+              <h2 className="font-sans font-extrabold text-[30px] md:text-[42px] leading-[1.1] text-[#202020] max-w-xl">
+                Our <span className="text-[#D6A900]">Expertise</span>
               </h2>
             </div>
           </Reveal>
 
-          {/* Services Grid */}
-
-          <div
-            className="
-              grid
-              grid-cols-1
-              sm:grid-cols-2
-              lg:grid-cols-4
-              gap-6
-            "
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service, index) => (
-              <Reveal
-                key={service.title}
-                delay={index * 0.05}
-              >
-                <div
-                  className="
-                    relative
-                    group
-                    bg-white
-                    h-full
-                    flex
-                    flex-col
-                    overflow-hidden
-
-                    border
-                    border-[#E7E7E7]
-
-                    hover:-translate-y-1
-                    hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)]
-
-                    transition-all
-                    duration-300
-                  "
-                >
-                  {/* Image */}
-
-                  <div
-                    className="
-                      h-48
-                      overflow-hidden
-                      relative
-                      bg-[#EEEEEE]
-                    "
-                  >
+              <Reveal key={service.title} delay={index * 0.05}>
+                <div className="relative group bg-white h-full flex flex-col overflow-hidden border border-[#E7E7E7] hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
+                  <div className="h-48 overflow-hidden relative bg-[#EEEEEE]">
                     <img
                       src={service.img}
                       alt={service.title}
-                      className="
-                        w-full
-                        h-full
-                        object-cover
-
-                        transition-transform
-                        duration-700
-
-                        group-hover:scale-105
-                      "
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-
-                    <div
-                      className="
-                        absolute
-                        inset-0
-                        bg-gradient-to-t
-                        from-black/30
-                        via-transparent
-                        to-transparent
-                      "
-                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                   </div>
 
-                  {/* Content */}
-
-                  <div
-                    className="
-                      p-7
-                      flex
-                      flex-col
-                      flex-1
-                      bg-white
-                      text-left
-                    "
-                  >
+                  <div className="p-7 flex flex-col flex-1 bg-white text-left">
                     <div className="w-8 h-[3px] bg-[#F6C62E] mb-5" />
-
-                    <h3
-                      className="
-                        font-sans
-                        font-bold
-                        text-[18px]
-                        text-[#202020]
-
-                        mb-3
-
-                        leading-snug
-
-                        group-hover:text-[#D6A900]
-
-                        transition-colors
-                        duration-300
-                      "
-                    >
+                    <h3 className="font-sans font-bold text-[18px] text-[#202020] mb-3 leading-snug group-hover:text-[#D6A900] transition-colors duration-300">
                       {service.title}
                     </h3>
-
-                    <p
-                      className="
-                        text-[#666666]
-                        text-[14px]
-                        leading-relaxed
-                      "
-                    >
+                    <p className="text-[#666666] text-[14px] leading-relaxed">
                       {service.desc}
                     </p>
                   </div>
 
-                  {/* Bottom Accent */}
-
-                  <div
-                    className="
-                      absolute
-                      bottom-0
-                      left-0
-
-                      h-[4px]
-                      w-0
-
-                      bg-[#F6C62E]
-
-                      group-hover:w-full
-
-                      transition-all
-                      duration-500
-                    "
-                  />
+                  <div className="absolute bottom-0 left-0 h-[4px] w-0 bg-[#F6C62E] group-hover:w-full transition-all duration-500" />
                 </div>
               </Reveal>
             ))}
@@ -343,224 +208,50 @@ export default function Businesses() {
         </div>
       </section>
 
-      {/* =========================================================
-          SECTORAL PRESENCE
-      ========================================================== */}
-
+      {/* ================= SECTORAL PRESENCE ================= */}
       <section className="bg-[#F5F5F5] py-20 md:py-28">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-          {/* Heading */}
-
           <Reveal className="text-left mb-12">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-10 h-[3px] bg-[#F6C62E]" />
-
-              <span
-                className="
-                  text-[12px]
-                  md:text-[13px]
-                  uppercase
-                  tracking-[0.16em]
-                  font-bold
-                  text-[#858585]
-                "
-              >
+              <span className="text-[12px] md:text-[13px] uppercase tracking-[0.16em] font-bold text-[#858585]">
                 Industries We Serve
               </span>
             </div>
-
-            <h2
-              className="
-                font-sans
-                font-extrabold
-
-                text-[32px]
-                md:text-[42px]
-
-                leading-[1.15]
-
-                text-[#202020]
-              "
-            >
-              Sectoral{" "}
-              <span className="text-[#D6A900]">
-                Presence
-              </span>
+            <h2 className="font-sans font-extrabold text-[32px] md:text-[42px] leading-[1.15] text-[#202020]">
+              Sectoral <span className="text-[#D6A900]">Presence</span>
             </h2>
           </Reveal>
 
-          {/* Sector Image Grid */}
-
-          <div
-            className="
-              grid
-              grid-cols-1
-              sm:grid-cols-2
-              lg:grid-cols-3
-
-              gap-5
-            "
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {SECTORS.map((sector, index) => (
-              <Reveal
-                key={sector.name}
-                delay={index * 0.04}
-              >
-                <div
-                  className="
-                    relative
-                    group
-                    overflow-hidden
-
-                    min-h-[285px]
-                    md:min-h-[320px]
-
-                    bg-[#202020]
-                  "
-                >
-                  {/* Stock Image */}
-
+              <Reveal key={sector.name} delay={index * 0.04}>
+                <div className="relative group overflow-hidden min-h-[285px] md:min-h-[320px] bg-[#202020]">
                   <img
                     src={sector.img}
                     alt={sector.name}
                     loading="lazy"
-                    className="
-                      absolute
-                      inset-0
-
-                      w-full
-                      h-full
-
-                      object-cover
-
-                      transition-transform
-                      duration-700
-                      ease-out
-
-                      group-hover:scale-110
-                    "
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
-
-                  {/* Overlay */}
-
-                  <div
-                    className="
-                      absolute
-                      inset-0
-
-                      bg-gradient-to-t
-                      from-black/90
-                      via-black/25
-                      to-black/5
-
-                      transition-all
-                      duration-500
-                    "
-                  />
-
-                  {/* Number */}
-
-                  <span
-                    className="
-                      absolute
-                      top-5
-                      right-5
-
-                      text-white/60
-
-                      text-[12px]
-
-                      tracking-[0.16em]
-                      font-bold
-
-                      z-10
-                    "
-                  >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/5 transition-all duration-500" />
+                  
+                  <span className="absolute top-5 right-5 text-white/60 text-[12px] tracking-[0.16em] font-bold z-10">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  {/* Content */}
-
-                  <div
-                    className="
-                      absolute
-                      bottom-0
-                      left-0
-                      right-0
-
-                      z-10
-
-                      p-6
-                      md:p-7
-                    "
-                  >
-                    <div
-                      className="
-                        w-9
-                        h-[3px]
-
-                        bg-[#F6C62E]
-
-                        mb-4
-
-                        group-hover:w-16
-
-                        transition-all
-                        duration-500
-                      "
-                    />
-
-                    <h3
-                      className="
-                        font-sans
-                        font-bold
-
-                        text-white
-
-                        text-[18px]
-                        md:text-[21px]
-
-                        leading-[1.2]
-                      "
-                    >
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-6 md:p-7">
+                    <div className="w-9 h-[3px] bg-[#F6C62E] mb-4 group-hover:w-16 transition-all duration-500" />
+                    <h3 className="font-sans font-bold text-white text-[18px] md:text-[21px] leading-[1.2]">
                       {sector.name}
                     </h3>
-
                     {sector.subtitle && (
-                      <p
-                        className="
-                          text-[#D7D7D7]
-                          text-[13px]
-                          mt-2
-                          font-medium
-                        "
-                      >
+                      <p className="text-[#D7D7D7] text-[13px] mt-2 font-medium">
                         {sector.subtitle}
                       </p>
                     )}
                   </div>
 
-                  {/* Hover Yellow Line */}
-
-                  <div
-                    className="
-                      absolute
-                      bottom-0
-                      left-0
-
-                      h-[4px]
-                      w-0
-
-                      bg-[#F6C62E]
-
-                      group-hover:w-full
-
-                      transition-all
-                      duration-500
-
-                      z-20
-                    "
-                  />
+                  <div className="absolute bottom-0 left-0 h-[4px] w-0 bg-[#F6C62E] group-hover:w-full transition-all duration-500 z-20" />
                 </div>
               </Reveal>
             ))}
@@ -568,120 +259,37 @@ export default function Businesses() {
         </div>
       </section>
 
-      {/* =========================================================
-          OUR CLIENTS
-      ========================================================== */}
-
+      {/* ================= CLIENTS (5 items per row on large screens) ================= */}
       <section className="bg-white py-20 md:py-24">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
             <div className="text-left mb-10">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-10 h-[3px] bg-[#F6C62E]" />
-
-                <span
-                  className="
-                    text-[12px]
-                    uppercase
-                    tracking-[0.16em]
-                    font-bold
-                    text-[#858585]
-                  "
-                >
+                <span className="text-[12px] uppercase tracking-[0.16em] font-bold text-[#858585]">
                   Trusted Partnerships
                 </span>
               </div>
-
-              <h2
-                className="
-                  font-sans
-                  font-extrabold
-
-                  text-[30px]
-                  md:text-[42px]
-
-                  leading-[1.1]
-
-                  text-[#202020]
-                "
-              >
-                Our{" "}
-                <span className="text-[#D6A900]">
-                  Clients
-                </span>
+              <h2 className="font-sans font-extrabold text-[30px] md:text-[42px] leading-[1.1] text-[#202020]">
+                Trusted <span className="text-[#D6A900]">By</span>
               </h2>
-
-              <p
-                className="
-                  text-[#666666]
-                  text-[15px]
-                  leading-relaxed
-                  max-w-xl
-                  mt-4
-                "
-              >
-                Trusted by leading organizations across industries to
-                deliver reliable engineering and EPC solutions.
+              <p className="text-[#666666] text-[15px] leading-relaxed max-w-xl mt-4">
+                Leading organizations across industries to deliver reliable engineering and EPC solutions.
               </p>
             </div>
           </Reveal>
 
-          {/* Client Logos */}
-
           <Reveal delay={0.1}>
-            <div
-              className="
-                grid
-                grid-cols-2
-                md:grid-cols-3
-                lg:grid-cols-4
-
-                border-t
-                border-l
-                border-[#E7E7E7]
-              "
-            >
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 border-t border-l border-[#E7E7E7]">
               {CLIENTS.map((imgSrc, index) => (
                 <div
                   key={index}
-                  className="
-                    group
-
-                    border-b
-                    border-r
-                    border-[#E7E7E7]
-
-                    flex
-                    items-center
-                    justify-center
-
-                    p-8
-
-                    h-[140px]
-                    md:h-[160px]
-
-                    bg-white
-
-                    hover:bg-[#FFFBEF]
-
-                    transition-all
-                    duration-300
-                  "
+                  className="group border-b border-r border-[#E7E7E7] flex items-center justify-center p-6 h-[130px] md:h-[150px] bg-white hover:bg-[#FFFBEF] transition-all duration-300"
                 >
                   <img
                     src={imgSrc}
                     alt={`Client logo ${index + 1}`}
-                    className="
-                      max-h-full
-                      max-w-full
-
-                      object-contain
-
-                      transition-transform
-                      duration-300
-
-                      group-hover:scale-[1.04]
-                    "
+                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
                     loading="lazy"
                   />
                 </div>
@@ -691,247 +299,59 @@ export default function Businesses() {
         </div>
       </section>
 
-      {/* =========================================================
-          OUR APPROACH
-      ========================================================== */}
-
+      {/* ================= INTEGRATED DELIVERY / APPROACH ================= */}
       <section className="bg-[#F5F5F5] py-20 md:py-28">
-        <div
-          className="
-            max-w-[1440px]
-            mx-auto
-
-            px-4
-            sm:px-6
-            lg:px-12
-
-            grid
-            grid-cols-1
-            lg:grid-cols-2
-
-            gap-10
-            lg:gap-16
-
-            items-center
-          "
-        >
-          {/* Left Content */}
-
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <Reveal>
             <div className="text-left">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-10 h-[3px] bg-[#F6C62E]" />
-
-                <span
-                  className="
-                    text-[12px]
-                    md:text-[13px]
-
-                    uppercase
-                    tracking-[0.16em]
-
-                    font-bold
-                    text-[#858585]
-                  "
-                >
+                <span className="text-[12px] md:text-[13px] uppercase tracking-[0.16em] font-bold text-[#858585]">
                   Integrated Delivery
                 </span>
               </div>
 
-              <h2
-                className="
-                  font-sans
-                  font-extrabold
-
-                  text-[30px]
-                  sm:text-[40px]
-
-                  leading-[1.1]
-
-                  text-[#202020]
-
-                  mb-5
-                "
-              >
+              <h2 className="font-sans font-extrabold text-[30px] sm:text-[40px] leading-[1.1] text-[#202020] mb-5">
                 One accountable partner.
                 <br />
-
-                <span className="text-[#D6A900]">
-                  Every discipline.
-                </span>
+                <span className="text-[#D6A900]">Every discipline.</span>
               </h2>
 
-              <p
-                className="
-                  text-[#666666]
-                  text-[15px]
-                  leading-relaxed
-
-                  max-w-lg
-
-                  mb-4
-                "
-              >
-                Most projects juggle separate contractors for mechanical,
-                electrical, plumbing, and fire systems — and the coordination
-                gaps between them cost time and money. Vardhusa runs all four
-                under one project team, one schedule, and one point of
-                accountability.
+              <p className="text-[#666666] text-[15px] leading-relaxed max-w-lg mb-4">
+                Most projects juggle separate contractors for mechanical, electrical, plumbing, and fire systems — and the coordination gaps between them cost time and money. Vardhusa runs all four under one project team, one schedule, and one point of accountability.
               </p>
 
-              <p
-                className="
-                  text-[#666666]
-                  text-[15px]
-                  leading-relaxed
-
-                  max-w-lg
-
-                  mb-8
-                "
-              >
-                That means fewer clashes on site, faster approvals, and a
-                single number to call when something needs to change.
+              <p className="text-[#666666] text-[15px] leading-relaxed max-w-lg mb-8">
+                That means fewer clashes on site, faster approvals, and a single number to call when something needs to change.
               </p>
 
               <button
                 type="button"
-                className="
-                  group
-
-                  flex
-                  items-center
-                  gap-3
-
-                  bg-[#F6C62E]
-                  text-[#202020]
-
-                  pl-6
-                  pr-2
-                  py-2
-
-                  text-[14px]
-                  font-bold
-
-                  hover:bg-[#202020]
-                  hover:text-white
-
-                  transition-all
-                  duration-300
-                "
+                onClick={() => navigate("/contact")}
+                className="group flex items-center gap-3 bg-[#F6C62E] text-[#202020] pl-6 pr-2 py-2 text-[14px] font-bold hover:bg-[#202020] hover:text-white transition-all duration-300"
               >
                 Talk to Our Team
-
-                <span
-                  className="
-                    w-9
-                    h-9
-
-                    flex
-                    items-center
-                    justify-center
-
-                    bg-white/70
-                    text-[#202020]
-
-                    group-hover:bg-[#F6C62E]
-
-                    transition-all
-                    duration-300
-                  "
-                >
-                  <ArrowRight
-                    size={16}
-                    className="
-                      transition-transform
-                      duration-300
-
-                      group-hover:translate-x-1
-                    "
-                  />
+                <span className="w-9 h-9 flex items-center justify-center bg-white/70 text-[#202020] group-hover:bg-[#F6C62E] transition-all duration-300">
+                  <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </button>
             </div>
           </Reveal>
 
-          {/* Right Image */}
-
           <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.96,
-            }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.3,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="
-              relative
-              group
-              overflow-hidden
-
-              min-h-[340px]
-              sm:min-h-[420px]
-
-              bg-[#DDDDDD]
-            "
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="relative group overflow-hidden min-h-[340px] sm:min-h-[420px] bg-[#DDDDDD]"
           >
             <img
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85"
               alt="Engineers coordinating on site"
-              className="
-                absolute
-                inset-0
-
-                w-full
-                h-full
-
-                object-cover
-
-                transition-transform
-                duration-700
-
-                group-hover:scale-105
-              "
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-
-            <div
-              className="
-                absolute
-                inset-0
-
-                bg-gradient-to-t
-                from-black/35
-                via-transparent
-                to-transparent
-              "
-            />
-
-            <div
-              className="
-                absolute
-                bottom-0
-                left-0
-
-                h-[4px]
-                w-0
-
-                bg-[#F6C62E]
-
-                group-hover:w-full
-
-                transition-all
-                duration-500
-              "
-            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 h-[4px] w-0 bg-[#F6C62E] group-hover:w-full transition-all duration-500" />
           </motion.div>
         </div>
       </section>
