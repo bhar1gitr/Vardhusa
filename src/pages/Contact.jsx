@@ -12,6 +12,7 @@ import {
   AlertCircle,
   Loader2,
 } from "lucide-react";
+import BACKEND_URL from "../url";
 
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
@@ -45,7 +46,7 @@ export default function Contact() {
     setStatusMessage("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${BACKEND_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

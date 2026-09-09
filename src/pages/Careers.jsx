@@ -13,6 +13,7 @@ import {
   Loader2,
   CheckCircle2,
 } from "lucide-react";
+import BACKEND_URL from "../url";
 
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
@@ -128,7 +129,7 @@ export default function Careers() {
       }
 
       // Local URL endpoint for backend development
-      const response = await fetch("http://localhost:5000/api/careers/apply", {
+      const response = await fetch(`${BACKEND_URL}/api/careers/apply`, {
         method: "POST",
         body: data, // Note: Do not set Content-Type header manually when using FormData
       });

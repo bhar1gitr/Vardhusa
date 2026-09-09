@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom"; // Use React Router for internal navigation
 import { Send, Loader2 } from "lucide-react";
 import logo from "../assets/logo.png";
+import BACKEND_URL from "../url";
 
 const FOOTER_COLS = [
   {
@@ -40,7 +41,7 @@ export default function Footer() {
     setStatusMessage(null);
 
     try {
-      const response = await fetch("http://localhost:5000/api/newsletter", {
+      const response = await fetch(`${BACKEND_URL}/api/newsletter`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
