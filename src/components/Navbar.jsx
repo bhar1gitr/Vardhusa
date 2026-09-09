@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 const LINKS = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Businesses", to: "/businesses" },
+  { label: "Solutions", to: "/businesses" },
   { label: "Projects", to: "/projects" },
   { label: "Careers", to: "/careers" },
   { label: "CSR", to: "/csr" },
