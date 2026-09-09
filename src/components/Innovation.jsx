@@ -16,20 +16,20 @@ export default function Innovation() {
               </span>
             </div>
 
-            <h2 className="font-sans font-extrabold text-[32px] md:text-[44px] leading-[1.1] text-[#202020] max-w-xl">
+            {/* <h2 className="font-sans font-extrabold text-[32px] md:text-[44px] leading-[1.1] text-[#202020] max-w-xl">
               Engineers with a Thirst
               <br />
               <span className="text-[#D6A900]">
                 for Innovation
               </span>
-            </h2>
+            </h2> */}
           </div>
 
-          <p className="text-[#666666] max-w-md text-[15px] leading-relaxed lg:pt-8">
+          {/* <p className="text-[#666666] max-w-md text-[15px] leading-relaxed lg:pt-8">
             Every individual working in our company is the owner of the
             company. We have all rights to take responsibilities, accept
             new challenges and achieve goals.
-          </p>
+          </p> */}
         </div>
 
         {/* Cards */}
