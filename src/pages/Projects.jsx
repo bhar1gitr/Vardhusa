@@ -146,7 +146,7 @@ export default function Projects() {
                       text-[#858585]
                     "
                   >
-                    Our Portfolio
+                    Project Portfolio
                   </span>
                 </div>
 
