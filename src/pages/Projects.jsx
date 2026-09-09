@@ -150,7 +150,7 @@ export default function Projects() {
                   </span>
                 </div>
 
-                <h2
+                {/* <h2
                   className="
                     font-sans
                     font-extrabold
@@ -182,7 +182,7 @@ export default function Projects() {
                 >
                   Explore projects delivered across multiple sectors,
                   locations, and engineering disciplines.
-                </p>
+                </p> */}
               </div>
             </div>
           </Reveal>
