@@ -20,6 +20,7 @@ const upload = multer({ storage });
 const app = express();
 
 app.use(cors());
+app.options('*', cors());
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({

@@ -38,6 +38,10 @@ import imgShapoorji from "../assets/clients/ShapoorjiPallonji.png";
 import imgSignatureGlobal from "../assets/clients/signature-global.jpeg";
 import imgTata from "../assets/clients/tata.jpeg";
 import imgTcs from "../assets/clients/tcs.jpeg";
+import imgIndospace from "../assets/clients/indospace.jpeg";
+import imgNcc from "../assets/clients/ncc.jpeg";
+import imgelpro from "../assets/clients/elpro.jpeg";
+import imgOneofkind from "../assets/clients/oneofkind.jpeg";
 
 const SERVICES = [
   {
@@ -123,28 +127,32 @@ const SECTORS = [
 ];
 
 const CLIENTS = [
-  imgAashima,
-  imgAditya,
-  imgAirports,
-  imgAmanora,
-  imgBirla,
-  imgBounce,
-  imgClub,
   imgConscient,
-  imgCourtyard,
-  imgDhoot,
-  imgExperion,
-  imgGodrej,
-  imgGrand,
-  imgKeystone,
-  imgKraheja,
-  imgM3m,
-  imgRadisson,
-  imgSchott,
-  imgShapoorji,
-  imgSignatureGlobal,
   imgTata,
   imgTcs,
+  imgShapoorji,
+  imgDhoot,
+  imgSignatureGlobal,
+  imgClub,
+  imgSchott,
+  imgCourtyard,
+  imgGrand,
+  imgExperion,
+  imgM3m,
+  imgBirla,
+  imgRadisson,
+  imgAashima,
+  imgBounce,
+  imgGodrej,
+  imgAirports,
+  imgAmanora,
+  imgKeystone,
+  imgKraheja,
+  // imgAditya,
+  imgIndospace,
+  imgNcc,
+  imgelpro,
+  imgOneofkind
 ];
 
 export default function Businesses() {
@@ -168,12 +176,9 @@ export default function Businesses() {
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-10 h-[3px] bg-[#F6C62E]" />
                 <span className="text-[12px] md:text-[13px] uppercase tracking-[0.16em] font-bold text-[#858585]">
-                  What We Do
+                  Our <span className="text-[#D6A900]">Expertise</span>
                 </span>
               </div>
-              <h2 className="font-sans font-extrabold text-[30px] md:text-[42px] leading-[1.1] text-[#202020] max-w-xl">
-                Our <span className="text-[#D6A900]">Expertise</span>
-              </h2>
             </div>
           </Reveal>
 
@@ -218,9 +223,6 @@ export default function Businesses() {
                 Industries We Serve
               </span>
             </div>
-            <h2 className="font-sans font-extrabold text-[32px] md:text-[42px] leading-[1.15] text-[#202020]">
-              Sectoral <span className="text-[#D6A900]">Presence</span>
-            </h2>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -259,7 +261,7 @@ export default function Businesses() {
         </div>
       </section>
 
-      {/* ================= CLIENTS (5 items per row on large screens) ================= */}
+      {/* ================= CLIENTS ================= */}
       <section className="bg-white py-20 md:py-24">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
@@ -267,29 +269,23 @@ export default function Businesses() {
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-10 h-[3px] bg-[#F6C62E]" />
                 <span className="text-[12px] uppercase tracking-[0.16em] font-bold text-[#858585]">
-                  Trusted Partnerships
+                  Trusted <span className="text-[#D6A900]">By</span>
                 </span>
               </div>
-              <h2 className="font-sans font-extrabold text-[30px] md:text-[42px] leading-[1.1] text-[#202020]">
-                Trusted <span className="text-[#D6A900]">By</span>
-              </h2>
-              <p className="text-[#666666] text-[15px] leading-relaxed max-w-xl mt-4">
-                Leading organizations across industries to deliver reliable engineering and EPC solutions.
-              </p>
             </div>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 border-t border-l border-[#E7E7E7]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
               {CLIENTS.map((imgSrc, index) => (
                 <div
                   key={index}
-                  className="group border-b border-r border-[#E7E7E7] flex items-center justify-center p-6 h-[130px] md:h-[150px] bg-white hover:bg-[#FFFBEF] transition-all duration-300"
+                  className="group flex items-center justify-center p-4 h-[110px] md:h-[130px] transition-all duration-300"
                 >
                   <img
                     src={imgSrc}
                     alt={`Client logo ${index + 1}`}
-                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
+                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
