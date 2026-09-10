@@ -169,7 +169,7 @@ export default function CSR() {
       {/* ========================================
           INITIATIVES
       ======================================== */}
-      <section className="bg-[#F5F5F5] py-10 md:py-28">
+      <section className="bg-[#F5F5F5] py-10 md:py-18">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
             <div className="flex items-center gap-3 mb-4">
@@ -317,7 +317,7 @@ export default function CSR() {
       {/* ========================================
           GALLERY
       ======================================== */}
-      <section className="bg-white py-10 md:py-28">
+      <section className="bg-white py-10 md:py-18">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
             <div className="flex items-center gap-3 mb-4">
