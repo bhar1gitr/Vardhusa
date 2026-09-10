@@ -169,7 +169,7 @@ export default function Businesses() {
       />
 
       {/* ================= SERVICES ================= */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white py-10 md:py-28">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
             <div className="text-left mb-14">
@@ -214,7 +214,7 @@ export default function Businesses() {
       </section>
 
       {/* ================= SECTORAL PRESENCE ================= */}
-      <section className="bg-[#F5F5F5] py-20 md:py-28">
+      <section className="bg-[#F5F5F5] py-10 md:py-28">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal className="text-left mb-12">
             <div className="flex items-center gap-3 mb-4">
@@ -262,7 +262,7 @@ export default function Businesses() {
       </section>
 
       {/* ================= CLIENTS ================= */}
-      <section className="bg-white py-20 md:py-24">
+      <section className="bg-white py-10 md:py-24">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
             <div className="text-left mb-10">

@@ -27,7 +27,7 @@ export default function Gallery() {
       {/* ========================================
           GALLERY INTRO
       ======================================== */}
-      <section className="bg-white py-20 md:py-24">
+      <section className="bg-white py-10 md:py-24">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
             <div className="text-left max-w-[720px]">

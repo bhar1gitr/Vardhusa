@@ -126,7 +126,7 @@ export default function Projects() {
       {/* ========================================
           PROJECTS SECTION
       ======================================== */}
-      <section className="bg-[#F5F5F5] py-20 md:py-28">
+      <section className="bg-[#F5F5F5] py-10 md:py-28">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
 
           {/* Heading */}

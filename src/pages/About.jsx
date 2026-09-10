@@ -522,7 +522,7 @@ export default function About() {
       {/* =========================================================
           VISION + MISSION
       ========================================================== */}
-      <section className="bg-[#F5F5F5] py-20 md:py-28">
+      <section className="bg-[#F5F5F5] py-10 md:py-28">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           {/* Heading */}
           <Reveal>
@@ -615,7 +615,7 @@ export default function About() {
       {/* =========================================================
           POLICIES INTRO
       ========================================================== */}
-      <section className="bg-white pt-20 md:pt-28">
+      <section className="bg-white pt-10 md:pt-28">
         <div
           className="
             max-w-[1440px]

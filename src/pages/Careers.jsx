@@ -195,7 +195,7 @@ export default function Careers() {
       </section>
 
       {/* Open Positions */}
-      <section className="bg-[#F5F5F5] py-20 md:py-28">
+      <section className="bg-[#F5F5F5] py-10 md:py-28">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-12">
