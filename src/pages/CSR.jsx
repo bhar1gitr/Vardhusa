@@ -9,6 +9,11 @@ import {
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 
+import csr1 from "../assets/csr/csr1.jpeg";
+import csr2 from "../assets/csr/csr2.jpeg";
+import csr3 from "../assets/csr/csr3.jpeg";
+import csr4 from "../assets/csr/csr4.jpeg";
+
 const INITIATIVES = [
   {
     icon: GraduationCap,
@@ -52,10 +57,10 @@ const STATS = [
 ];
 
 const GALLERY = [
-  "https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=700&q=80",
-  "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=700&q=80",
-  "https://images.unsplash.com/photo-1497436072909-f5e4be1713f8?auto=format&fit=crop&w=700&q=80",
-  "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=700&q=80",
+  csr1,
+  csr2,
+  csr3,
+  csr4,
 ];
 
 export default function CSR() {
