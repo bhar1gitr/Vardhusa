@@ -296,7 +296,7 @@ export default function Businesses() {
       </section>
 
       {/* ================= INTEGRATED DELIVERY / APPROACH ================= */}
-      <section className="bg-[#F5F5F5] py-20 md:py-28">
+      <section className="bg-[#F5F5F5] py-20 md:py-18">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <Reveal>
             <div className="text-left">
