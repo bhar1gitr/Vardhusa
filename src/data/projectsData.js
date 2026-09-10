@@ -68,7 +68,7 @@ export const PROJECTS = [
   {
     name: "Schott Kaisha",
     location: "Umarsadi Gujarat",
-    category: "Industrial",
+    category: "Healthcare",
     scope: "Plumbing & Firefighting",
     img: project5,
   },

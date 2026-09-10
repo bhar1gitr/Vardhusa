@@ -34,7 +34,7 @@ const INITIATIVES = [
 
 const STATS = [
   {
-    value: "12+",
+    value: "4+",
     label: "CSR Programs Run",
   },
   {
@@ -42,11 +42,11 @@ const STATS = [
     label: "Communities Supported",
   },
   {
-    value: "600+",
+    value: "100+",
     label: "Lives Impacted",
   },
   {
-    value: "100M+",
+    value: "10M+",
     label: "Safe Hours Achieved",
   },
 ];
