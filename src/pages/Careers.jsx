@@ -43,39 +43,33 @@ const VALUES = [
 
 const ROLES = [
   {
-    title: "Senior MEP Engineer",
-    dept: "Mechanical",
+    title: "Site Engineer - Plumbing & Fire Protection",
+    dept: "Engineering",
+    location: "Gurugram, India",
+    type: "Full-time",
+  },
+  {
+    title: "Site Supervisor - Plumbing & Fire Protection",
+    dept: "Site Operations",
+    location: "Gurugram, India",
+    type: "Full-time",
+  },
+  {
+    title: "Mechanical Project Manager - Plumbing & Fire Protection",
+    dept: "Projects",
+    location: "Gurugram, India",
+    type: "Full-time",
+  },
+  {
+    title: "Billing Engineer",
+    dept: "Billing",
+    location: "Gurugram, India",
+    type: "Full-time",
+  },
+  {
+    title: "HR Manager",
+    dept: "Human Resources",
     location: "Mumbai, India",
-    type: "Full-time",
-  },
-  {
-    title: "Site Supervisor — Plumbing",
-    dept: "Plumbing",
-    location: "Thane, India",
-    type: "Full-time",
-  },
-  {
-    title: "Electrical Design Engineer",
-    dept: "Electrical",
-    location: "Mumbai, India",
-    type: "Full-time",
-  },
-  {
-    title: "Firefighting Systems Technician",
-    dept: "Firefighting",
-    location: "Navi Mumbai, India",
-    type: "Full-time",
-  },
-  {
-    title: "Project Coordinator",
-    dept: "Operations",
-    location: "Mumbai, India",
-    type: "Full-time",
-  },
-  {
-    title: "QA/QC Engineer",
-    dept: "Quality",
-    location: "Pune, India",
     type: "Full-time",
   },
 ];
