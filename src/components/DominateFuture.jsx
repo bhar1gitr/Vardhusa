@@ -23,7 +23,7 @@ export default function DominateFuture() {
 
   return (
     <section className="bg-[#F5F5F5]">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-10 md:py-28">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-10 md:py-18">
         
         {/* ================= HEADING ================= */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">

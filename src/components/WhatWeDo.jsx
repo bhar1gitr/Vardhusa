@@ -47,7 +47,7 @@ const SERVICES = [
 
 export default function WhatWeDo() {
   return (
-    <section className="bg-white py-10 md:py-28">
+    <section className="bg-white py-10 md:py-18">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
 
         {/* Heading */}
